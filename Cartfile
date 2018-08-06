@@ -1,0 +1,7 @@
+github "Moya/Moya"
+
+github "Hearst-DD/ObjectMapper" ~> 3.3
+
+github "pkluz/PKHUD" ~> 5.0
+
+github "SnapKit/SnapKit" ~> 4.0.0
