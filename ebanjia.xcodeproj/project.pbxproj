@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		834BF4F4211AB93600C6C76E /* AllGood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834BF4F0211AB93600C6C76E /* AllGood.swift */; };
+		834BF4F5211AB93600C6C76E /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834BF4F1211AB93600C6C76E /* Result.swift */; };
+		834BF4F6211AB93600C6C76E /* CartGood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834BF4F2211AB93600C6C76E /* CartGood.swift */; };
+		834BF4F9211AB97D00C6C76E /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834BF4F8211AB97C00C6C76E /* Category.swift */; };
+		834BF4FD211ABD2700C6C76E /* EBGoodsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834BF4FB211ABD2700C6C76E /* EBGoodsTableViewCell.swift */; };
+		834BF4FE211ABD2700C6C76E /* EBGoodsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 834BF4FC211ABD2700C6C76E /* EBGoodsTableViewCell.xib */; };
+		834BF501211AD2F700C6C76E /* EBCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834BF4FF211AD2F700C6C76E /* EBCategoryTableViewCell.swift */; };
+		834BF502211AD2F700C6C76E /* EBCategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 834BF500211AD2F700C6C76E /* EBCategoryTableViewCell.xib */; };
 		8389AEED211066940066999D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8389AEEC211066940066999D /* AppDelegate.swift */; };
 		8389AEF7211066950066999D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8389AEF5211066950066999D /* LaunchScreen.storyboard */; };
 		8389AF0021129A620066999D /* EBLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8389AEFE21129A620066999D /* EBLoginViewController.swift */; };
@@ -83,6 +91,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		834BF4F0211AB93600C6C76E /* AllGood.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllGood.swift; sourceTree = "<group>"; };
+		834BF4F1211AB93600C6C76E /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		834BF4F2211AB93600C6C76E /* CartGood.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartGood.swift; sourceTree = "<group>"; };
+		834BF4F8211AB97C00C6C76E /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		834BF4FB211ABD2700C6C76E /* EBGoodsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EBGoodsTableViewCell.swift; sourceTree = "<group>"; };
+		834BF4FC211ABD2700C6C76E /* EBGoodsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EBGoodsTableViewCell.xib; sourceTree = "<group>"; };
+		834BF4FF211AD2F700C6C76E /* EBCategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EBCategoryTableViewCell.swift; sourceTree = "<group>"; };
+		834BF500211AD2F700C6C76E /* EBCategoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EBCategoryTableViewCell.xib; sourceTree = "<group>"; };
 		8389AEE9211066940066999D /* ebanjia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ebanjia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8389AEEC211066940066999D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8389AEF6211066950066999D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -168,6 +184,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		834BF4EC211AB78200C6C76E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				83BA49EA2117E8EA0085FB68 /* EBGoodsViewController.swift */,
+				83BA49EB2117E8EA0085FB68 /* EBGoodsViewController.xib */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		834BF4ED211AB79100C6C76E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				834BF4F8211AB97C00C6C76E /* Category.swift */,
+				834BF4F0211AB93600C6C76E /* AllGood.swift */,
+				834BF4F2211AB93600C6C76E /* CartGood.swift */,
+				834BF4F1211AB93600C6C76E /* Result.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		834BF4FA211ABD1700C6C76E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				834BF4FB211ABD2700C6C76E /* EBGoodsTableViewCell.swift */,
+				834BF4FC211ABD2700C6C76E /* EBGoodsTableViewCell.xib */,
+				834BF4FF211AD2F700C6C76E /* EBCategoryTableViewCell.swift */,
+				834BF500211AD2F700C6C76E /* EBCategoryTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		8389AEE0211066940066999D = {
 			isa = PBXGroup;
 			children = (
@@ -345,8 +392,9 @@
 		83BA49E92117E8D50085FB68 /* Goods */ = {
 			isa = PBXGroup;
 			children = (
-				83BA49EA2117E8EA0085FB68 /* EBGoodsViewController.swift */,
-				83BA49EB2117E8EA0085FB68 /* EBGoodsViewController.xib */,
+				834BF4FA211ABD1700C6C76E /* View */,
+				834BF4ED211AB79100C6C76E /* Model */,
+				834BF4EC211AB78200C6C76E /* ViewController */,
 			);
 			path = Goods;
 			sourceTree = "<group>";
@@ -471,7 +519,9 @@
 				8389AF352112F9190066999D /* EBInputTableViewCell.xib in Resources */,
 				8389AF0821129AC20066999D /* EBInfoViewController.xib in Resources */,
 				84BE8ED72117521300AE755E /* EBOrderListViewController.xib in Resources */,
+				834BF502211AD2F700C6C76E /* EBCategoryTableViewCell.xib in Resources */,
 				84BE8ED92117592F00AE755E /* Assets.xcassets in Resources */,
+				834BF4FE211ABD2700C6C76E /* EBGoodsTableViewCell.xib in Resources */,
 				84BE8EBA2116CF3200AE755E /* EBSearchMapViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -486,8 +536,10 @@
 				84BE8ECD2117438200AE755E /* EBMainViewController.swift in Sources */,
 				84932C9421160CE200431C57 /* EBItemPickerView.swift in Sources */,
 				8389AF3B211304A90066999D /* EBSelectTableViewCell.swift in Sources */,
+				834BF4FD211ABD2700C6C76E /* EBGoodsTableViewCell.swift in Sources */,
 				84932C9321160CE200431C57 /* EBMaskView.swift in Sources */,
 				8389AF382112FA270066999D /* UITableView+Reuse.swift in Sources */,
+				834BF501211AD2F700C6C76E /* EBCategoryTableViewCell.swift in Sources */,
 				8389AEED211066940066999D /* AppDelegate.swift in Sources */,
 				8389AF2A2112E3C40066999D /* EBResponse.swift in Sources */,
 				8389AF0021129A620066999D /* EBLoginViewController.swift in Sources */,
@@ -495,12 +547,16 @@
 				8389AF3E211314A40066999D /* EBHeaderView.swift in Sources */,
 				8389AF342112F9190066999D /* EBInputTableViewCell.swift in Sources */,
 				8389AF0721129AC20066999D /* EBInfoViewController.swift in Sources */,
+				834BF4F9211AB97D00C6C76E /* Category.swift in Sources */,
 				84BE8ED62117521300AE755E /* EBOrderListViewController.swift in Sources */,
 				83BA49EC2117E8EA0085FB68 /* EBGoodsViewController.swift in Sources */,
+				834BF4F6211AB93600C6C76E /* CartGood.swift in Sources */,
 				8389AF162112CBD10066999D /* EBAccountApi.swift in Sources */,
 				84932C9221160CE200431C57 /* EBContentView.swift in Sources */,
 				84BE8EB92116CF3200AE755E /* EBSearchMapViewController.swift in Sources */,
 				84BE8ECA21170A2D00AE755E /* EBDummy.mm in Sources */,
+				834BF4F5211AB93600C6C76E /* Result.swift in Sources */,
+				834BF4F4211AB93600C6C76E /* AllGood.swift in Sources */,
 				84BE8E6E2116A05B00AE755E /* EBConfig.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

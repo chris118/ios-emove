@@ -23,17 +23,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, BMKGeneralDelegate {
         
         if isLogin {
             let mainVC = EBMainViewController()
-            mainVC.navigationItem.title = "e搬家"
-            let navi = UINavigationController(rootViewController: mainVC)
-            //导航栏背景颜色
-            navi.navigationBar.barTintColor = UIColor(red: 0, green: 146/255.0, blue: 224/255.0, alpha: 1)
-            let dict:NSDictionary = [NSAttributedStringKey.foregroundColor: UIColor.white, NSAttributedStringKey.font : UIFont.systemFont(ofSize: 18)]
-            //标题颜色
-            navi.navigationBar.titleTextAttributes = dict as? [NSAttributedStringKey : Any]
+//            mainVC.navigationItem.title = "e搬家"
+//            let navi = UINavigationController(rootViewController: mainVC)
+//            //导航栏背景颜色
+//            navi.navigationBar.barTintColor = UIColor(red: 0, green: 146/255.0, blue: 224/255.0, alpha: 1)
+//            let dict:NSDictionary = [NSAttributedStringKey.foregroundColor: UIColor.white, NSAttributedStringKey.font : UIFont.systemFont(ofSize: 18)]
+//            //标题颜色
+//            navi.navigationBar.titleTextAttributes = dict as? [NSAttributedStringKey : Any]
+//            
+//            UINavigationBar.appearance().tintColor = UIColor.white
             
-            UINavigationBar.appearance().tintColor = UIColor.white
-            
-            rootVC = navi
+            rootVC = mainVC
         }else {
             rootVC =  EBLoginViewController()
         }

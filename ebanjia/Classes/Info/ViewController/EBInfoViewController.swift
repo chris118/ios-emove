@@ -9,57 +9,88 @@
 import UIKit
 
 class EBInfoViewController: UIViewController {
+    
+    private let elevatorOptions = ["有", "无"]
+    private let assembleOptions = ["需要", "不需要"]
+    
     private var out_map_uid = ""
     private var out_adress = ""
+    private var elevator_out_index = 0
+    private var assemble_out_index = 0
+    private var out_distance = ""
     
     private var in_map_uid = ""
     private var in_adress = ""
+    private var elevator_in_index = 0
+    private var assemble_in_index = 0
+    private var in_distance = ""
     
     @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let item = UIBarButtonItem(title: "下一步", style: UIBarButtonItemStyle.plain, target: self, action: #selector(nextTap))
+        self.navigationItem.rightBarButtonItem = item
+        
         self.tableView.registerNibWithCell(EBInputTableViewCell.self)
         self.tableView.registerNibWithCell(EBSelectTableViewCell.self)
         self.tableView.tableFooterView = UIView()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    deinit {
+        print("EBInfoViewController deinit")
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        let item = UIBarButtonItem(title: "下一步", style: UIBarButtonItemStyle.plain, target: self, action: #selector(nextTap))
-        self.tabBarController?.navigationItem.rightBarButtonItem = item
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-         self.tabBarController?.navigationItem.rightBarButtonItem = nil
     }
     
     @objc private func nextTap() {
         let goodsVC = EBGoodsViewController()
-        self.tabBarController?.navigationController?.pushViewController(goodsVC, animated: true)
+        self.navigationController?.pushViewController(goodsVC, animated: true)
     }
     
-    private lazy var elevatorPickerView: EBItemPickerView = {
+    private lazy var elevatorOutPickerView: EBItemPickerView = {
         var _pickerView = EBItemPickerView()
-         _pickerView.items = ["有", "无"]
-        _pickerView.didSelect = { index in
-            print(index)
+         _pickerView.items = elevatorOptions
+        _pickerView.didSelect = {[weak self]  index in
+            self?.elevator_out_index = index
+            self?.tableView.reloadData()
         }
         return _pickerView
     }()
     
-    private lazy var assemblePickerView: EBItemPickerView = {
+    private lazy var assembleOutPickerView: EBItemPickerView = {
         var _pickerView = EBItemPickerView()
-        _pickerView.items = ["需要", "不需要"]
-        _pickerView.didSelect = { index in
-            print(index)
+        _pickerView.items = assembleOptions
+        _pickerView.didSelect = {[weak self] index in
+            self?.assemble_out_index = index
+            self?.tableView.reloadData()
+        }
+        return _pickerView
+    }()
+    
+    private lazy var elevatorInPickerView: EBItemPickerView = {
+        var _pickerView = EBItemPickerView()
+        _pickerView.items = elevatorOptions
+        _pickerView.didSelect = {[weak self] index in
+            self?.elevator_in_index = index
+            self?.tableView.reloadData()
+        }
+        return _pickerView
+    }()
+    
+    private lazy var assembleInPickerView: EBItemPickerView = {
+        var _pickerView = EBItemPickerView()
+        _pickerView.items = assembleOptions
+        _pickerView.didSelect = {[weak self] index in
+            self?.assemble_in_index = index
+            self?.tableView.reloadData()
         }
         return _pickerView
     }()
@@ -87,17 +118,20 @@ extension EBInfoViewController: UITableViewDataSource {
             case 1:
                 let cell = tableView.dequeueCell(EBSelectTableViewCell.self)
                 cell.titleLabel.text = "有无电梯"
-                cell.valueLabel.text = "有"
+                cell.valueLabel.text = elevatorOptions[elevator_out_index]
                 return cell
             case 2:
                 let cell = tableView.dequeueCell(EBSelectTableViewCell.self)
                 cell.titleLabel.text = "需要拼装"
-                cell.valueLabel.text = "需要"
+                cell.valueLabel.text = assembleOptions[assemble_out_index]
                 return cell
             case 3:
                 let cell = tableView.dequeueCell(EBInputTableViewCell.self)
                 cell.titleLabel.text = "搬出距离"
                 cell.valueTextField.placeholder = "请填写搬出距离"
+                cell.valueChanged = {[weak self] value in
+                    self?.out_distance = value
+                }
                 return cell
             default:
                 break
@@ -113,17 +147,20 @@ extension EBInfoViewController: UITableViewDataSource {
             case 1:
                 let cell = tableView.dequeueCell(EBSelectTableViewCell.self)
                 cell.titleLabel.text = "有无电梯"
-                cell.valueLabel.text = "有"
+                cell.valueLabel.text = elevatorOptions[elevator_in_index]
                 return cell
             case 2:
                 let cell = tableView.dequeueCell(EBSelectTableViewCell.self)
                 cell.titleLabel.text = "需要拼装"
-                cell.valueLabel.text = "需要"
+                cell.valueLabel.text = assembleOptions[assemble_in_index]
                 return cell
             case 3:
                 let cell = tableView.dequeueCell(EBInputTableViewCell.self)
                 cell.titleLabel.text = "搬入距离"
                 cell.valueTextField.placeholder = "请填写搬入距离"
+                cell.valueChanged = {[weak self] value in
+                    self?.in_distance = value
+                }
                 return cell
             default:
                 break
@@ -150,9 +187,9 @@ extension EBInfoViewController: UITableViewDelegate {
                 }
                 self.present(mapVC, animated: false, completion: nil)
             case 1:
-                elevatorPickerView.show()
+                elevatorOutPickerView.show()
             case 2:
-                assemblePickerView.show()
+                assembleOutPickerView.show()
             default:
                 break
             }
@@ -167,9 +204,9 @@ extension EBInfoViewController: UITableViewDelegate {
                 }
                 self.present(mapVC, animated: false, completion: nil)
             case 1:
-                elevatorPickerView.show()
+                elevatorInPickerView.show()
             case 2:
-                assemblePickerView.show()
+                assembleInPickerView.show()
             default:
                 break
             }
