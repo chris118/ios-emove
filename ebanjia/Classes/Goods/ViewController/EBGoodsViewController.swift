@@ -20,7 +20,7 @@ class EBGoodsViewController: UIViewController {
     @IBOutlet weak var badgeLabel: UILabel!
     @IBOutlet weak var bulkLabel: UILabel!
     
-    private var goodsData: EBResponse?
+    private var goodsData: EBResponse<InfoResult>?
     private var second_category_height_list = [Int]()
     private var second_category_cout_per_first_category = [Int]()
     private var goods_cout_per_second_category = [Int]()
@@ -52,7 +52,7 @@ class EBGoodsViewController: UIViewController {
     }
     
     @objc private func nextTap() {
-        let goodsVC = EBGoodsViewController()
+        let goodsVC = EBInfoExViewController()
         self.navigationController?.pushViewController(goodsVC, animated: true)
     }
     
@@ -87,7 +87,6 @@ class EBGoodsViewController: UIViewController {
     
     private func loadData() {
          goodsData = EBResponse(JSONString: json)
-        print(goodsData?.code ?? -1)
         
         //初始化高度列表
         guard let all_goods = goodsData?.result?.allGoods else {
@@ -341,8 +340,8 @@ extension EBGoodsViewController: UITableViewDelegate {
                 row = index
             }
         
-            print("section: \(section)")
-            print("row: \(row)")
+//            print("section: \(section)")
+//            print("row: \(row)")
            
             categoryTableView.reloadData()
             categoryTableView.scrollToRow(at: IndexPath(row: row, section: section), at: .top, animated: true)

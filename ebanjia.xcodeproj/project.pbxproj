@@ -8,13 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		834BF4F4211AB93600C6C76E /* AllGood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834BF4F0211AB93600C6C76E /* AllGood.swift */; };
-		834BF4F5211AB93600C6C76E /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834BF4F1211AB93600C6C76E /* Result.swift */; };
+		834BF4F5211AB93600C6C76E /* InfoResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834BF4F1211AB93600C6C76E /* InfoResult.swift */; };
 		834BF4F6211AB93600C6C76E /* CartGood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834BF4F2211AB93600C6C76E /* CartGood.swift */; };
 		834BF4F9211AB97D00C6C76E /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834BF4F8211AB97C00C6C76E /* Category.swift */; };
 		834BF4FD211ABD2700C6C76E /* EBGoodsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834BF4FB211ABD2700C6C76E /* EBGoodsTableViewCell.swift */; };
 		834BF4FE211ABD2700C6C76E /* EBGoodsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 834BF4FC211ABD2700C6C76E /* EBGoodsTableViewCell.xib */; };
 		834BF501211AD2F700C6C76E /* EBCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834BF4FF211AD2F700C6C76E /* EBCategoryTableViewCell.swift */; };
 		834BF502211AD2F700C6C76E /* EBCategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 834BF500211AD2F700C6C76E /* EBCategoryTableViewCell.xib */; };
+		834BF507211BCF2A00C6C76E /* EBInfoExViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834BF505211BCF2A00C6C76E /* EBInfoExViewController.swift */; };
+		834BF508211BCF2A00C6C76E /* EBInfoExViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 834BF506211BCF2A00C6C76E /* EBInfoExViewController.xib */; };
 		8389AEED211066940066999D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8389AEEC211066940066999D /* AppDelegate.swift */; };
 		8389AEF7211066950066999D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8389AEF5211066950066999D /* LaunchScreen.storyboard */; };
 		8389AF0021129A620066999D /* EBLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8389AEFE21129A620066999D /* EBLoginViewController.swift */; };
@@ -38,6 +40,21 @@
 		8389AF4221131AAB0066999D /* SnapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8389AF3F21131AA20066999D /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		83BA49EC2117E8EA0085FB68 /* EBGoodsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BA49EA2117E8EA0085FB68 /* EBGoodsViewController.swift */; };
 		83BA49ED2117E8EA0085FB68 /* EBGoodsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83BA49EB2117E8EA0085FB68 /* EBGoodsViewController.xib */; };
+		83CCDA6C211BD13D002E64C8 /* CartContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CCDA67211BD13C002E64C8 /* CartContact.swift */; };
+		83CCDA6D211BD13D002E64C8 /* InfoExResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CCDA68211BD13C002E64C8 /* InfoExResult.swift */; };
+		83CCDA6F211BD13D002E64C8 /* TimeSlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CCDA6A211BD13D002E64C8 /* TimeSlot.swift */; };
+		83CCDA70211BD13D002E64C8 /* CartTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CCDA6B211BD13D002E64C8 /* CartTime.swift */; };
+		83CCDA72211BED40002E64C8 /* EBDatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CCDA71211BED40002E64C8 /* EBDatePickerView.swift */; };
+		83CCDA74211C0FCD002E64C8 /* Date+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CCDA73211C0FCD002E64C8 /* Date+extension.swift */; };
+		83CCDA78211C1D34002E64C8 /* EBMarkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CCDA76211C1D34002E64C8 /* EBMarkTableViewCell.swift */; };
+		83CCDA79211C1D34002E64C8 /* EBMarkTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83CCDA77211C1D34002E64C8 /* EBMarkTableViewCell.xib */; };
+		83CCDA7E211C2E8B002E64C8 /* EBVehicleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CCDA7C211C2E8B002E64C8 /* EBVehicleViewController.swift */; };
+		83CCDA7F211C2E8B002E64C8 /* EBVehicleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83CCDA7D211C2E8B002E64C8 /* EBVehicleViewController.xib */; };
+		83CCDA83211C2F3A002E64C8 /* UsableFleet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CCDA81211C2F3A002E64C8 /* UsableFleet.swift */; };
+		83CCDA84211C2F3A002E64C8 /* VehicleResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CCDA82211C2F3A002E64C8 /* VehicleResult.swift */; };
+		83CCDA88211C31FC002E64C8 /* EBVehicleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CCDA86211C31FC002E64C8 /* EBVehicleTableViewCell.swift */; };
+		83CCDA89211C31FC002E64C8 /* EBVehicleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83CCDA87211C31FC002E64C8 /* EBVehicleTableViewCell.xib */; };
+		83CCDA8C211C3703002E64C8 /* EBStarRateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CCDA8B211C3703002E64C8 /* EBStarRateView.swift */; };
 		84932C9221160CE200431C57 /* EBContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84932C8F21160CE100431C57 /* EBContentView.swift */; };
 		84932C9321160CE200431C57 /* EBMaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84932C9021160CE100431C57 /* EBMaskView.swift */; };
 		84932C9421160CE200431C57 /* EBItemPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84932C9121160CE100431C57 /* EBItemPickerView.swift */; };
@@ -92,13 +109,15 @@
 
 /* Begin PBXFileReference section */
 		834BF4F0211AB93600C6C76E /* AllGood.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllGood.swift; sourceTree = "<group>"; };
-		834BF4F1211AB93600C6C76E /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		834BF4F1211AB93600C6C76E /* InfoResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoResult.swift; sourceTree = "<group>"; };
 		834BF4F2211AB93600C6C76E /* CartGood.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartGood.swift; sourceTree = "<group>"; };
 		834BF4F8211AB97C00C6C76E /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		834BF4FB211ABD2700C6C76E /* EBGoodsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EBGoodsTableViewCell.swift; sourceTree = "<group>"; };
 		834BF4FC211ABD2700C6C76E /* EBGoodsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EBGoodsTableViewCell.xib; sourceTree = "<group>"; };
 		834BF4FF211AD2F700C6C76E /* EBCategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EBCategoryTableViewCell.swift; sourceTree = "<group>"; };
 		834BF500211AD2F700C6C76E /* EBCategoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EBCategoryTableViewCell.xib; sourceTree = "<group>"; };
+		834BF505211BCF2A00C6C76E /* EBInfoExViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EBInfoExViewController.swift; sourceTree = "<group>"; };
+		834BF506211BCF2A00C6C76E /* EBInfoExViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EBInfoExViewController.xib; sourceTree = "<group>"; };
 		8389AEE9211066940066999D /* ebanjia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ebanjia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8389AEEC211066940066999D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8389AEF6211066950066999D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -121,6 +140,21 @@
 		8389AF3F21131AA20066999D /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		83BA49EA2117E8EA0085FB68 /* EBGoodsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EBGoodsViewController.swift; sourceTree = "<group>"; };
 		83BA49EB2117E8EA0085FB68 /* EBGoodsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EBGoodsViewController.xib; sourceTree = "<group>"; };
+		83CCDA67211BD13C002E64C8 /* CartContact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartContact.swift; sourceTree = "<group>"; };
+		83CCDA68211BD13C002E64C8 /* InfoExResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoExResult.swift; sourceTree = "<group>"; };
+		83CCDA6A211BD13D002E64C8 /* TimeSlot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeSlot.swift; sourceTree = "<group>"; };
+		83CCDA6B211BD13D002E64C8 /* CartTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartTime.swift; sourceTree = "<group>"; };
+		83CCDA71211BED40002E64C8 /* EBDatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EBDatePickerView.swift; sourceTree = "<group>"; };
+		83CCDA73211C0FCD002E64C8 /* Date+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+extension.swift"; sourceTree = "<group>"; };
+		83CCDA76211C1D34002E64C8 /* EBMarkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EBMarkTableViewCell.swift; sourceTree = "<group>"; };
+		83CCDA77211C1D34002E64C8 /* EBMarkTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EBMarkTableViewCell.xib; sourceTree = "<group>"; };
+		83CCDA7C211C2E8B002E64C8 /* EBVehicleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EBVehicleViewController.swift; sourceTree = "<group>"; };
+		83CCDA7D211C2E8B002E64C8 /* EBVehicleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EBVehicleViewController.xib; sourceTree = "<group>"; };
+		83CCDA81211C2F3A002E64C8 /* UsableFleet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsableFleet.swift; sourceTree = "<group>"; };
+		83CCDA82211C2F3A002E64C8 /* VehicleResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleResult.swift; sourceTree = "<group>"; };
+		83CCDA86211C31FC002E64C8 /* EBVehicleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EBVehicleTableViewCell.swift; sourceTree = "<group>"; };
+		83CCDA87211C31FC002E64C8 /* EBVehicleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EBVehicleTableViewCell.xib; sourceTree = "<group>"; };
+		83CCDA8B211C3703002E64C8 /* EBStarRateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EBStarRateView.swift; sourceTree = "<group>"; };
 		84932C8F21160CE100431C57 /* EBContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EBContentView.swift; sourceTree = "<group>"; };
 		84932C9021160CE100431C57 /* EBMaskView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EBMaskView.swift; sourceTree = "<group>"; };
 		84932C9121160CE100431C57 /* EBItemPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EBItemPickerView.swift; sourceTree = "<group>"; };
@@ -199,7 +233,7 @@
 				834BF4F8211AB97C00C6C76E /* Category.swift */,
 				834BF4F0211AB93600C6C76E /* AllGood.swift */,
 				834BF4F2211AB93600C6C76E /* CartGood.swift */,
-				834BF4F1211AB93600C6C76E /* Result.swift */,
+				834BF4F1211AB93600C6C76E /* InfoResult.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -213,6 +247,25 @@
 				834BF500211AD2F700C6C76E /* EBCategoryTableViewCell.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		834BF503211BCF0600C6C76E /* InfoEx */ = {
+			isa = PBXGroup;
+			children = (
+				83CCDA75211C1D22002E64C8 /* View */,
+				83CCDA66211BD11D002E64C8 /* Model */,
+				834BF504211BCF1100C6C76E /* ViewController */,
+			);
+			path = InfoEx;
+			sourceTree = "<group>";
+		};
+		834BF504211BCF1100C6C76E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				834BF505211BCF2A00C6C76E /* EBInfoExViewController.swift */,
+				834BF506211BCF2A00C6C76E /* EBInfoExViewController.xib */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		8389AEE0211066940066999D = {
@@ -254,6 +307,8 @@
 		8389AF0221129A710066999D /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				83CCDA7A211C2E4B002E64C8 /* Vehicle */,
+				834BF503211BCF0600C6C76E /* InfoEx */,
 				83BA49E92117E8D50085FB68 /* Goods */,
 				84BE8ED3211751FB00AE755E /* OrderList */,
 				84BE8ECE211751C300AE755E /* Home */,
@@ -385,6 +440,7 @@
 			isa = PBXGroup;
 			children = (
 				8389AF372112FA270066999D /* UITableView+Reuse.swift */,
+				83CCDA73211C0FCD002E64C8 /* Date+extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -399,9 +455,75 @@
 			path = Goods;
 			sourceTree = "<group>";
 		};
+		83CCDA66211BD11D002E64C8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				83CCDA67211BD13C002E64C8 /* CartContact.swift */,
+				83CCDA6B211BD13D002E64C8 /* CartTime.swift */,
+				83CCDA68211BD13C002E64C8 /* InfoExResult.swift */,
+				83CCDA6A211BD13D002E64C8 /* TimeSlot.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		83CCDA75211C1D22002E64C8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				83CCDA76211C1D34002E64C8 /* EBMarkTableViewCell.swift */,
+				83CCDA77211C1D34002E64C8 /* EBMarkTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		83CCDA7A211C2E4B002E64C8 /* Vehicle */ = {
+			isa = PBXGroup;
+			children = (
+				83CCDA85211C31E2002E64C8 /* View */,
+				83CCDA80211C2F2B002E64C8 /* Model */,
+				83CCDA7B211C2E6F002E64C8 /* ViewController */,
+			);
+			path = Vehicle;
+			sourceTree = "<group>";
+		};
+		83CCDA7B211C2E6F002E64C8 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				83CCDA7C211C2E8B002E64C8 /* EBVehicleViewController.swift */,
+				83CCDA7D211C2E8B002E64C8 /* EBVehicleViewController.xib */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		83CCDA80211C2F2B002E64C8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				83CCDA82211C2F3A002E64C8 /* VehicleResult.swift */,
+				83CCDA81211C2F3A002E64C8 /* UsableFleet.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		83CCDA85211C31E2002E64C8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				83CCDA86211C31FC002E64C8 /* EBVehicleTableViewCell.swift */,
+				83CCDA87211C31FC002E64C8 /* EBVehicleTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		83CCDA8A211C36F5002E64C8 /* StarView */ = {
+			isa = PBXGroup;
+			children = (
+				83CCDA8B211C3703002E64C8 /* EBStarRateView.swift */,
+			);
+			path = StarView;
+			sourceTree = "<group>";
+		};
 		84932C8D21160CC700431C57 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				83CCDA8A211C36F5002E64C8 /* StarView */,
 				84932C8E21160CE100431C57 /* PickerView */,
 			);
 			path = Component;
@@ -413,6 +535,7 @@
 				84932C8F21160CE100431C57 /* EBContentView.swift */,
 				84932C9021160CE100431C57 /* EBMaskView.swift */,
 				84932C9121160CE100431C57 /* EBItemPickerView.swift */,
+				83CCDA71211BED40002E64C8 /* EBDatePickerView.swift */,
 			);
 			path = PickerView;
 			sourceTree = "<group>";
@@ -513,7 +636,10 @@
 			files = (
 				84BE8ED2211751D900AE755E /* EBHomeViewController.xib in Resources */,
 				8389AF3C211304A90066999D /* EBSelectTableViewCell.xib in Resources */,
+				83CCDA7F211C2E8B002E64C8 /* EBVehicleViewController.xib in Resources */,
 				83BA49ED2117E8EA0085FB68 /* EBGoodsViewController.xib in Resources */,
+				834BF508211BCF2A00C6C76E /* EBInfoExViewController.xib in Resources */,
+				83CCDA89211C31FC002E64C8 /* EBVehicleTableViewCell.xib in Resources */,
 				8389AEF7211066950066999D /* LaunchScreen.storyboard in Resources */,
 				8389AF0121129A620066999D /* EBLoginViewController.xib in Resources */,
 				8389AF352112F9190066999D /* EBInputTableViewCell.xib in Resources */,
@@ -523,6 +649,7 @@
 				84BE8ED92117592F00AE755E /* Assets.xcassets in Resources */,
 				834BF4FE211ABD2700C6C76E /* EBGoodsTableViewCell.xib in Resources */,
 				84BE8EBA2116CF3200AE755E /* EBSearchMapViewController.xib in Resources */,
+				83CCDA79211C1D34002E64C8 /* EBMarkTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -534,28 +661,41 @@
 			buildActionMask = 2147483647;
 			files = (
 				84BE8ECD2117438200AE755E /* EBMainViewController.swift in Sources */,
+				83CCDA83211C2F3A002E64C8 /* UsableFleet.swift in Sources */,
 				84932C9421160CE200431C57 /* EBItemPickerView.swift in Sources */,
+				83CCDA6C211BD13D002E64C8 /* CartContact.swift in Sources */,
 				8389AF3B211304A90066999D /* EBSelectTableViewCell.swift in Sources */,
 				834BF4FD211ABD2700C6C76E /* EBGoodsTableViewCell.swift in Sources */,
+				834BF507211BCF2A00C6C76E /* EBInfoExViewController.swift in Sources */,
 				84932C9321160CE200431C57 /* EBMaskView.swift in Sources */,
 				8389AF382112FA270066999D /* UITableView+Reuse.swift in Sources */,
 				834BF501211AD2F700C6C76E /* EBCategoryTableViewCell.swift in Sources */,
 				8389AEED211066940066999D /* AppDelegate.swift in Sources */,
+				83CCDA6F211BD13D002E64C8 /* TimeSlot.swift in Sources */,
 				8389AF2A2112E3C40066999D /* EBResponse.swift in Sources */,
 				8389AF0021129A620066999D /* EBLoginViewController.swift in Sources */,
 				84BE8ED1211751D900AE755E /* EBHomeViewController.swift in Sources */,
 				8389AF3E211314A40066999D /* EBHeaderView.swift in Sources */,
 				8389AF342112F9190066999D /* EBInputTableViewCell.swift in Sources */,
+				83CCDA88211C31FC002E64C8 /* EBVehicleTableViewCell.swift in Sources */,
 				8389AF0721129AC20066999D /* EBInfoViewController.swift in Sources */,
+				83CCDA84211C2F3A002E64C8 /* VehicleResult.swift in Sources */,
 				834BF4F9211AB97D00C6C76E /* Category.swift in Sources */,
+				83CCDA7E211C2E8B002E64C8 /* EBVehicleViewController.swift in Sources */,
 				84BE8ED62117521300AE755E /* EBOrderListViewController.swift in Sources */,
+				83CCDA6D211BD13D002E64C8 /* InfoExResult.swift in Sources */,
+				83CCDA8C211C3703002E64C8 /* EBStarRateView.swift in Sources */,
 				83BA49EC2117E8EA0085FB68 /* EBGoodsViewController.swift in Sources */,
+				83CCDA74211C0FCD002E64C8 /* Date+extension.swift in Sources */,
+				83CCDA70211BD13D002E64C8 /* CartTime.swift in Sources */,
 				834BF4F6211AB93600C6C76E /* CartGood.swift in Sources */,
 				8389AF162112CBD10066999D /* EBAccountApi.swift in Sources */,
+				83CCDA72211BED40002E64C8 /* EBDatePickerView.swift in Sources */,
+				83CCDA78211C1D34002E64C8 /* EBMarkTableViewCell.swift in Sources */,
 				84932C9221160CE200431C57 /* EBContentView.swift in Sources */,
 				84BE8EB92116CF3200AE755E /* EBSearchMapViewController.swift in Sources */,
 				84BE8ECA21170A2D00AE755E /* EBDummy.mm in Sources */,
-				834BF4F5211AB93600C6C76E /* Result.swift in Sources */,
+				834BF4F5211AB93600C6C76E /* InfoResult.swift in Sources */,
 				834BF4F4211AB93600C6C76E /* AllGood.swift in Sources */,
 				84BE8E6E2116A05B00AE755E /* EBConfig.swift in Sources */,
 			);

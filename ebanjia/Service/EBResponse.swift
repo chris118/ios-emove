@@ -9,20 +9,28 @@
 import Foundation
 import ObjectMapper
 
-
-class EBResponse : NSObject, NSCoding, Mappable{
+class EBResponseEmpty: Mappable {
+    required init?(map: Map) {
+    }
     
     var code : Int?
     var msg : String?
-    var result : Result?
     
-    
-    class func newInstance(map: Map) -> Mappable?{
-        return EBResponse()
+    func mapping(map: Map)
+    {
+        code <- map["code"]
+        msg <- map["msg"]
     }
-    required init?(map: Map){}
-    private override init(){}
+}
+
+class EBResponse <T: Mappable>:NSCoding, Mappable{
     
+    var code : Int?
+    var msg : String?
+    var result : T?
+    
+    required init?(map: Map){}
+
     func mapping(map: Map)
     {
         code <- map["code"]
@@ -39,7 +47,7 @@ class EBResponse : NSObject, NSCoding, Mappable{
     {
         code = aDecoder.decodeObject(forKey: "code") as? Int
         msg = aDecoder.decodeObject(forKey: "msg") as? String
-        result = aDecoder.decodeObject(forKey: "result") as? Result
+        result = aDecoder.decodeObject(forKey: "result") as? T
         
     }
     

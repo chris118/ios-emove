@@ -6,21 +6,17 @@ import Foundation
 import ObjectMapper
 
 
-class Result : NSObject, NSCoding, Mappable{
+class InfoResult: NSCoding, Mappable{
 
 	var allGoods : [AllGood]?
 	var cartGoods : [CartGood]?
 	var firstCategory : [Category]?
 	var secondCategory : [Category]?
 
+	required init?(map: Map){
+    }
 
-	class func newInstance(map: Map) -> Mappable?{
-		return Result()
-	}
-	required init?(map: Map){}
-	private override init(){}
-
-	func mapping(map: Map)
+    func mapping(map: Map)
 	{
 		allGoods <- map["all_goods"]
 		cartGoods <- map["cart_goods"]

@@ -37,7 +37,7 @@ class EBLoginViewController: UIViewController {
             case let .success(response):
                 do {
                     print(try response.mapString())
-                    let resp = EBResponse(JSONString: try response.mapString())
+                    let resp = EBResponseEmpty(JSONString: try response.mapString())
                     if resp?.code == 0 { // 发送成功 倒计时开始
                         self.timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) {[weak self] (timer) in
                             guard let `self` = self else {
@@ -72,7 +72,7 @@ class EBLoginViewController: UIViewController {
             case let .success(response):
                 do {
                     print(try response.mapString())
-                    let resp = EBResponse(JSONString: try response.mapString())
+                    let resp = EBResponseEmpty(JSONString: try response.mapString())
                     if resp?.code == 0 {
                        let infoVC = EBInfoViewController()
                         let navi = UINavigationController(rootViewController: infoVC)

@@ -1,21 +1,16 @@
 //
-//  EBItemPickerView.swift
-//  ios-pop-view
+//  EBDatePickerView.swift
+//  ebanjia
 //
-//  Created by Chris on 2018/8/3.
-//  Copyright © 2018年 putao. All rights reserved.
+//  Created by Chris on 2018/8/9.
+//  Copyright © 2018年 ebanjia. All rights reserved.
 //
 
 import UIKit
 
-class EBItemPickerView: UIView {
-    var items = [String](){
-        didSet {
-            self.pickerView.reloadAllComponents()
-        }
-    }
+class EBDatePickerView: UIView {
     
-    var didSelect: ((Int) -> ())?
+    var didSelect: ((Date) -> ())?
     
     func show() {
         overlayView.show()
@@ -35,7 +30,6 @@ class EBItemPickerView: UIView {
     
     private let heightContent: CGFloat = 280
     private let farHeight: CGFloat = 2000
-    private var select_index = 0
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -47,7 +41,7 @@ class EBItemPickerView: UIView {
     }
     
     private func setupUI() {
-        contentView.addSubview(pickerView)
+        contentView.addSubview(dataPickView)
         overlayView.addSubview(contentView)
     }
     
@@ -59,44 +53,20 @@ class EBItemPickerView: UIView {
     private lazy var contentView: UIView = {
         var content = EBContentView(frame: CGRect(x: 0, y: UIScreen.main.bounds.height - heightContent, width: UIScreen.main.bounds.width, height: heightContent))
         content.cancel = {[weak self] in
-             self?.hide()
+            self?.hide()
         }
         content.confirm = {[weak self] in
             self?.hide()
             if let _didSelect = self?.didSelect {
-                _didSelect((self?.select_index)!)
+                _didSelect((self?.dataPickView.date)!)
             }
         }
         return content
     }()
     
-    private lazy var pickerView: UIPickerView = {
-        var _pickerView = UIPickerView(frame: CGRect(x: 0, y: 45, width: UIScreen.main.bounds.width, height: heightContent - 45))
-        _pickerView.dataSource = self
-        _pickerView.delegate = self
+    private lazy var dataPickView: UIDatePicker = {
+        var _pickerView = UIDatePicker(frame: CGRect(x: 0, y: 45, width: UIScreen.main.bounds.width, height: heightContent - 45))
+        _pickerView.datePickerMode = .date
         return _pickerView
     }()
-}
-
-// MARK: UIPickerViewDelegate
-extension EBItemPickerView: UIPickerViewDelegate {
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return items[row]
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-         select_index = row
-    }
-}
-
-// MARK: UIPickerViewDataSource
-extension EBItemPickerView: UIPickerViewDataSource {
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return items.count
-    }
-
 }
