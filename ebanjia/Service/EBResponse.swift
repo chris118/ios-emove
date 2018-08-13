@@ -23,6 +23,22 @@ class EBResponseEmpty: Mappable {
     }
 }
 
+class EBResponseList<T: Mappable>: Mappable {
+    var code : Int?
+    var msg : String?
+    var result : [T]?
+    
+    required init?(map: Map){}
+    
+    func mapping(map: Map)
+    {
+        code <- map["code"]
+        msg <- map["msg"]
+        result <- map["result"]
+        
+    }
+}
+
 class EBResponse <T: Mappable>:NSCoding, Mappable{
     
     var code : Int?

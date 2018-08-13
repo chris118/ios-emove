@@ -20,16 +20,16 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="la9-K8-4aj">
-                        <rect key="frame" x="16" y="14.5" width="50" height="15"/>
+                        <rect key="frame" x="16" y="14.5" width="60" height="15"/>
                         <constraints>
-                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="Uec-JC-hDu"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="Uec-JC-hDu"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" red="0.53327292203903198" green="0.53336817026138306" blue="0.53326696157455444" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Qyn-nl-FYJ">
-                        <rect key="frame" x="93" y="12.5" width="211" height="19"/>
+                        <rect key="frame" x="82" y="12.5" width="222" height="19"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="textColor" red="0.53327292203903198" green="0.53336817026138306" blue="0.53326696157455444" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -45,7 +45,7 @@
                     <constraint firstAttribute="trailing" secondItem="Qyn-nl-FYJ" secondAttribute="trailing" constant="16" id="ipx-lG-cZt"/>
                     <constraint firstItem="la9-K8-4aj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="lQl-5X-NL2"/>
                     <constraint firstItem="Qyn-nl-FYJ" firstAttribute="centerY" secondItem="la9-K8-4aj" secondAttribute="centerY" id="tsZ-py-BcG"/>
-                    <constraint firstItem="Qyn-nl-FYJ" firstAttribute="leading" secondItem="la9-K8-4aj" secondAttribute="trailing" constant="27" id="tzV-Bv-Mg9"/>
+                    <constraint firstItem="Qyn-nl-FYJ" firstAttribute="leading" secondItem="la9-K8-4aj" secondAttribute="trailing" constant="6" id="tzV-Bv-Mg9"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

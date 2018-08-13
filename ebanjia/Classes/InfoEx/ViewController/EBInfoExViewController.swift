@@ -32,11 +32,17 @@ class EBInfoExViewController: UIViewController {
         loadData()
     }
     
+    deinit {
+        print("EBInfoExViewController deinit")
+    }
+    
     private func setupUI() {
+        let item = UIBarButtonItem(title: "下一步", style: UIBarButtonItemStyle.plain, target: self, action: #selector(nextTap))
+        self.navigationItem.rightBarButtonItem = item
+        
         self.tableView.registerNibWithCell(EBInputTableViewCell.self)
         self.tableView.registerNibWithCell(EBSelectTableViewCell.self)
         self.tableView.registerNibWithCell(EBMarkTableViewCell.self)
-        
         self.tableView.tableFooterView = UIView()
     }
     
@@ -69,6 +75,11 @@ class EBInfoExViewController: UIViewController {
         }
 
         tableView.reloadData()
+    }
+    
+    @objc private func nextTap() {
+        let vehicleVC = EBVehicleViewController()
+        self.navigationController?.pushViewController(vehicleVC, animated: true)
     }
     
     private lazy var datePickerView: EBDatePickerView = {

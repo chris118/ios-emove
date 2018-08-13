@@ -20,13 +20,17 @@ class EBVehicleViewController: UIViewController {
         loadData()
         setupUI()
     }
-
+    
+    deinit {
+        print("EBVehicleViewController deinit")
+    }
+    
     private func setupUI() {
+        let item = UIBarButtonItem(title: "下一步", style: UIBarButtonItemStyle.plain, target: self, action: #selector(nextTap))
+        self.navigationItem.rightBarButtonItem = item
+        
         self.tableView.registerNibWithCell(EBVehicleTableViewCell.self)
         self.tableView.tableFooterView = UIView()
-
-        arrowView.transform = CGAffineTransform(rotationAngle: CGFloat.pi).concatenating(arrowView.transform)
-        arrowView.transform = CGAffineTransform(translationX: 0, y: 5).concatenating(arrowView.transform)
     }
     
     private func loadData() {
@@ -34,6 +38,24 @@ class EBVehicleViewController: UIViewController {
         select_id = respData?.result?.selectedFleetId ?? 0
         tableView.reloadData()
     }
+    
+    @objc private func nextTap() {
+        let orderVC = EBOrderViewController()
+        self.navigationController?.pushViewController(orderVC, animated: true)
+    }
+    
+    @IBAction func typeTap(_ sender: Any) {
+        typePickerView.show()
+    }
+    
+    private lazy var typePickerView: EBItemPickerView = {
+        var _typePickerView = EBItemPickerView()
+        _typePickerView.items = ["订单最多","评分最高","离我最近"]
+        _typePickerView.didSelect = {[weak self] index in
+
+        }
+        return _typePickerView
+    }()
 }
 
 // MARK: UITableView DataSource
@@ -54,10 +76,10 @@ extension EBVehicleViewController: UITableViewDataSource {
             }else {
                 cell.checked = false
             }
+            cell.data = usableFleet[indexPath.row]
+
         }
-
         return cell
-
     }
 }
 
@@ -67,7 +89,10 @@ extension EBVehicleViewController: UITableViewDelegate {
         if let usableFleet =  respData?.result?.usableFleet {
             select_id = usableFleet[indexPath.row].fleetId ?? 0
         }
+        let contentOffset = tableView.contentOffset
         tableView.reloadData()
+        tableView.layoutIfNeeded()
+        tableView.setContentOffset(contentOffset, animated: false)
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 155

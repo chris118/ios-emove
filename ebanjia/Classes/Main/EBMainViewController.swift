@@ -16,7 +16,7 @@ class EBMainViewController: UITabBarController {
     }
 
     private func setupUI() {
-        let  homeVC  = EBVehicleViewController()
+        let  homeVC  = EBHomeViewController()
         homeVC.tabBarItem.title = "首页"
         homeVC.tabBarItem.image = UIImage(named:"home_1")
         homeVC.tabBarItem.selectedImage = UIImage(named:"home")

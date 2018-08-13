@@ -14,8 +14,26 @@ class EBVehicleTableViewCell: UITableViewCell {
             checkButton.isSelected = checked
         }
     }
+    var data : UsableFleet? {
+        didSet {
+            if let _data = data {
+                titleLabel.text = _data.fleetName
+                evaluateLabel.text = "\(_data.evaluateCount ?? 0)次点评"
+                addressLabel.text = _data.fleetAddress
+                discountLabel.text = String((_data.discount ?? 0)/10)
+                starView.scorePercent = 0.2 * CGFloat(_data.evaluateStar ?? 0 )
+                leftLabel.text = String(_data.remainder ?? 0)
+            }
+        }
+    }
+    
     @IBOutlet weak var starView: EBStarRateView!
     @IBOutlet weak var checkButton: UIButton!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var evaluateLabel: UILabel!
+    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var discountLabel: UILabel!
+    @IBOutlet weak var leftLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -42,16 +42,9 @@ class EBInfoViewController: UIViewController {
         print("EBInfoViewController deinit")
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-    }
-    
     @objc private func nextTap() {
         let goodsVC = EBGoodsViewController()
+        goodsVC.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(goodsVC, animated: true)
     }
     

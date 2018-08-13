@@ -17,6 +17,14 @@
 		834BF502211AD2F700C6C76E /* EBCategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 834BF500211AD2F700C6C76E /* EBCategoryTableViewCell.xib */; };
 		834BF507211BCF2A00C6C76E /* EBInfoExViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834BF505211BCF2A00C6C76E /* EBInfoExViewController.swift */; };
 		834BF508211BCF2A00C6C76E /* EBInfoExViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 834BF506211BCF2A00C6C76E /* EBInfoExViewController.xib */; };
+		83600878211D8D3200C9F866 /* EBNoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83600876211D8D3200C9F866 /* EBNoteTableViewCell.swift */; };
+		83600879211D8D3200C9F866 /* EBNoteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83600877211D8D3200C9F866 /* EBNoteTableViewCell.xib */; };
+		8360087C211D939800C9F866 /* EB3ColumnTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8360087A211D939800C9F866 /* EB3ColumnTableViewCell.swift */; };
+		8360087D211D939800C9F866 /* EB3ColumnTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8360087B211D939800C9F866 /* EB3ColumnTableViewCell.xib */; };
+		8360087F212119CC00C9F866 /* String+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8360087E212119CC00C9F866 /* String+Size.swift */; };
+		8360088E21212ED000C9F866 /* EBOrderListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8360088A21212ED000C9F866 /* EBOrderListTableViewCell.xib */; };
+		8360088F21212ED000C9F866 /* EBOrderListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8360088B21212ED000C9F866 /* EBOrderListTableViewCell.swift */; };
+		8360089021212ED000C9F866 /* EBOrderListResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8360088D21212ED000C9F866 /* EBOrderListResult.swift */; };
 		8389AEED211066940066999D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8389AEEC211066940066999D /* AppDelegate.swift */; };
 		8389AEF7211066950066999D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8389AEF5211066950066999D /* LaunchScreen.storyboard */; };
 		8389AF0021129A620066999D /* EBLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8389AEFE21129A620066999D /* EBLoginViewController.swift */; };
@@ -55,6 +63,13 @@
 		83CCDA88211C31FC002E64C8 /* EBVehicleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CCDA86211C31FC002E64C8 /* EBVehicleTableViewCell.swift */; };
 		83CCDA89211C31FC002E64C8 /* EBVehicleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83CCDA87211C31FC002E64C8 /* EBVehicleTableViewCell.xib */; };
 		83CCDA8C211C3703002E64C8 /* EBStarRateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CCDA8B211C3703002E64C8 /* EBStarRateView.swift */; };
+		83CCDA91211D377D002E64C8 /* EBOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CCDA8F211D377D002E64C8 /* EBOrderViewController.swift */; };
+		83CCDA92211D377D002E64C8 /* EBOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83CCDA90211D377D002E64C8 /* EBOrderViewController.xib */; };
+		83CCDA97211D378F002E64C8 /* TotalInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CCDA94211D378E002E64C8 /* TotalInfo.swift */; };
+		83CCDA99211D378F002E64C8 /* OrderResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CCDA96211D378E002E64C8 /* OrderResult.swift */; };
+		83CCDA9B211D37C9002E64C8 /* BaseInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CCDA9A211D37C9002E64C8 /* BaseInfo.swift */; };
+		83CCDA9F211D416B002E64C8 /* EB2ColumnTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CCDA9D211D416B002E64C8 /* EB2ColumnTableViewCell.swift */; };
+		83CCDAA0211D416B002E64C8 /* EB2ColumnTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83CCDA9E211D416B002E64C8 /* EB2ColumnTableViewCell.xib */; };
 		84932C9221160CE200431C57 /* EBContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84932C8F21160CE100431C57 /* EBContentView.swift */; };
 		84932C9321160CE200431C57 /* EBMaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84932C9021160CE100431C57 /* EBMaskView.swift */; };
 		84932C9421160CE200431C57 /* EBItemPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84932C9121160CE100431C57 /* EBItemPickerView.swift */; };
@@ -118,6 +133,14 @@
 		834BF500211AD2F700C6C76E /* EBCategoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EBCategoryTableViewCell.xib; sourceTree = "<group>"; };
 		834BF505211BCF2A00C6C76E /* EBInfoExViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EBInfoExViewController.swift; sourceTree = "<group>"; };
 		834BF506211BCF2A00C6C76E /* EBInfoExViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EBInfoExViewController.xib; sourceTree = "<group>"; };
+		83600876211D8D3200C9F866 /* EBNoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EBNoteTableViewCell.swift; sourceTree = "<group>"; };
+		83600877211D8D3200C9F866 /* EBNoteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EBNoteTableViewCell.xib; sourceTree = "<group>"; };
+		8360087A211D939800C9F866 /* EB3ColumnTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EB3ColumnTableViewCell.swift; sourceTree = "<group>"; };
+		8360087B211D939800C9F866 /* EB3ColumnTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EB3ColumnTableViewCell.xib; sourceTree = "<group>"; };
+		8360087E212119CC00C9F866 /* String+Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Size.swift"; sourceTree = "<group>"; };
+		8360088A21212ED000C9F866 /* EBOrderListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EBOrderListTableViewCell.xib; sourceTree = "<group>"; };
+		8360088B21212ED000C9F866 /* EBOrderListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EBOrderListTableViewCell.swift; sourceTree = "<group>"; };
+		8360088D21212ED000C9F866 /* EBOrderListResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EBOrderListResult.swift; sourceTree = "<group>"; };
 		8389AEE9211066940066999D /* ebanjia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ebanjia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8389AEEC211066940066999D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8389AEF6211066950066999D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -155,6 +178,13 @@
 		83CCDA86211C31FC002E64C8 /* EBVehicleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EBVehicleTableViewCell.swift; sourceTree = "<group>"; };
 		83CCDA87211C31FC002E64C8 /* EBVehicleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EBVehicleTableViewCell.xib; sourceTree = "<group>"; };
 		83CCDA8B211C3703002E64C8 /* EBStarRateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EBStarRateView.swift; sourceTree = "<group>"; };
+		83CCDA8F211D377D002E64C8 /* EBOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EBOrderViewController.swift; sourceTree = "<group>"; };
+		83CCDA90211D377D002E64C8 /* EBOrderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EBOrderViewController.xib; sourceTree = "<group>"; };
+		83CCDA94211D378E002E64C8 /* TotalInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TotalInfo.swift; sourceTree = "<group>"; };
+		83CCDA96211D378E002E64C8 /* OrderResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderResult.swift; sourceTree = "<group>"; };
+		83CCDA9A211D37C9002E64C8 /* BaseInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseInfo.swift; sourceTree = "<group>"; };
+		83CCDA9D211D416B002E64C8 /* EB2ColumnTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EB2ColumnTableViewCell.swift; sourceTree = "<group>"; };
+		83CCDA9E211D416B002E64C8 /* EB2ColumnTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EB2ColumnTableViewCell.xib; sourceTree = "<group>"; };
 		84932C8F21160CE100431C57 /* EBContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EBContentView.swift; sourceTree = "<group>"; };
 		84932C9021160CE100431C57 /* EBMaskView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EBMaskView.swift; sourceTree = "<group>"; };
 		84932C9121160CE100431C57 /* EBItemPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EBItemPickerView.swift; sourceTree = "<group>"; };
@@ -268,6 +298,32 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		8360088121212B6800C9F866 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				84BE8ED42117521300AE755E /* EBOrderListViewController.swift */,
+				84BE8ED52117521300AE755E /* EBOrderListViewController.xib */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		8360088921212ED000C9F866 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8360088B21212ED000C9F866 /* EBOrderListTableViewCell.swift */,
+				8360088A21212ED000C9F866 /* EBOrderListTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8360088C21212ED000C9F866 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8360088D21212ED000C9F866 /* EBOrderListResult.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		8389AEE0211066940066999D = {
 			isa = PBXGroup;
 			children = (
@@ -307,6 +363,7 @@
 		8389AF0221129A710066999D /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				83CCDA8D211D375A002E64C8 /* Order */,
 				83CCDA7A211C2E4B002E64C8 /* Vehicle */,
 				834BF503211BCF0600C6C76E /* InfoEx */,
 				83BA49E92117E8D50085FB68 /* Goods */,
@@ -440,6 +497,7 @@
 			isa = PBXGroup;
 			children = (
 				8389AF372112FA270066999D /* UITableView+Reuse.swift */,
+				8360087E212119CC00C9F866 /* String+Size.swift */,
 				83CCDA73211C0FCD002E64C8 /* Date+extension.swift */,
 			);
 			path = Extensions;
@@ -520,6 +578,48 @@
 			path = StarView;
 			sourceTree = "<group>";
 		};
+		83CCDA8D211D375A002E64C8 /* Order */ = {
+			isa = PBXGroup;
+			children = (
+				83CCDA9C211D4149002E64C8 /* View */,
+				83CCDA93211D3781002E64C8 /* Model */,
+				83CCDA8E211D3763002E64C8 /* ViewController */,
+			);
+			path = Order;
+			sourceTree = "<group>";
+		};
+		83CCDA8E211D3763002E64C8 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				83CCDA8F211D377D002E64C8 /* EBOrderViewController.swift */,
+				83CCDA90211D377D002E64C8 /* EBOrderViewController.xib */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		83CCDA93211D3781002E64C8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				83CCDA96211D378E002E64C8 /* OrderResult.swift */,
+				83CCDA9A211D37C9002E64C8 /* BaseInfo.swift */,
+				83CCDA94211D378E002E64C8 /* TotalInfo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		83CCDA9C211D4149002E64C8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				83CCDA9D211D416B002E64C8 /* EB2ColumnTableViewCell.swift */,
+				83CCDA9E211D416B002E64C8 /* EB2ColumnTableViewCell.xib */,
+				8360087A211D939800C9F866 /* EB3ColumnTableViewCell.swift */,
+				8360087B211D939800C9F866 /* EB3ColumnTableViewCell.xib */,
+				83600876211D8D3200C9F866 /* EBNoteTableViewCell.swift */,
+				83600877211D8D3200C9F866 /* EBNoteTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		84932C8D21160CC700431C57 /* Component */ = {
 			isa = PBXGroup;
 			children = (
@@ -568,8 +668,9 @@
 		84BE8ED3211751FB00AE755E /* OrderList */ = {
 			isa = PBXGroup;
 			children = (
-				84BE8ED42117521300AE755E /* EBOrderListViewController.swift */,
-				84BE8ED52117521300AE755E /* EBOrderListViewController.xib */,
+				8360088C21212ED000C9F866 /* Model */,
+				8360088921212ED000C9F866 /* View */,
+				8360088121212B6800C9F866 /* ViewController */,
 			);
 			path = OrderList;
 			sourceTree = "<group>";
@@ -635,15 +736,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				84BE8ED2211751D900AE755E /* EBHomeViewController.xib in Resources */,
+				83600879211D8D3200C9F866 /* EBNoteTableViewCell.xib in Resources */,
+				83CCDAA0211D416B002E64C8 /* EB2ColumnTableViewCell.xib in Resources */,
 				8389AF3C211304A90066999D /* EBSelectTableViewCell.xib in Resources */,
 				83CCDA7F211C2E8B002E64C8 /* EBVehicleViewController.xib in Resources */,
 				83BA49ED2117E8EA0085FB68 /* EBGoodsViewController.xib in Resources */,
+				8360087D211D939800C9F866 /* EB3ColumnTableViewCell.xib in Resources */,
 				834BF508211BCF2A00C6C76E /* EBInfoExViewController.xib in Resources */,
 				83CCDA89211C31FC002E64C8 /* EBVehicleTableViewCell.xib in Resources */,
 				8389AEF7211066950066999D /* LaunchScreen.storyboard in Resources */,
+				83CCDA92211D377D002E64C8 /* EBOrderViewController.xib in Resources */,
 				8389AF0121129A620066999D /* EBLoginViewController.xib in Resources */,
 				8389AF352112F9190066999D /* EBInputTableViewCell.xib in Resources */,
 				8389AF0821129AC20066999D /* EBInfoViewController.xib in Resources */,
+				8360088E21212ED000C9F866 /* EBOrderListTableViewCell.xib in Resources */,
 				84BE8ED72117521300AE755E /* EBOrderListViewController.xib in Resources */,
 				834BF502211AD2F700C6C76E /* EBCategoryTableViewCell.xib in Resources */,
 				84BE8ED92117592F00AE755E /* Assets.xcassets in Resources */,
@@ -676,27 +782,37 @@
 				8389AF0021129A620066999D /* EBLoginViewController.swift in Sources */,
 				84BE8ED1211751D900AE755E /* EBHomeViewController.swift in Sources */,
 				8389AF3E211314A40066999D /* EBHeaderView.swift in Sources */,
+				8360089021212ED000C9F866 /* EBOrderListResult.swift in Sources */,
 				8389AF342112F9190066999D /* EBInputTableViewCell.swift in Sources */,
+				83CCDA99211D378F002E64C8 /* OrderResult.swift in Sources */,
 				83CCDA88211C31FC002E64C8 /* EBVehicleTableViewCell.swift in Sources */,
+				83CCDA97211D378F002E64C8 /* TotalInfo.swift in Sources */,
+				83CCDA91211D377D002E64C8 /* EBOrderViewController.swift in Sources */,
 				8389AF0721129AC20066999D /* EBInfoViewController.swift in Sources */,
 				83CCDA84211C2F3A002E64C8 /* VehicleResult.swift in Sources */,
+				83CCDA9F211D416B002E64C8 /* EB2ColumnTableViewCell.swift in Sources */,
 				834BF4F9211AB97D00C6C76E /* Category.swift in Sources */,
 				83CCDA7E211C2E8B002E64C8 /* EBVehicleViewController.swift in Sources */,
 				84BE8ED62117521300AE755E /* EBOrderListViewController.swift in Sources */,
+				8360087C211D939800C9F866 /* EB3ColumnTableViewCell.swift in Sources */,
 				83CCDA6D211BD13D002E64C8 /* InfoExResult.swift in Sources */,
 				83CCDA8C211C3703002E64C8 /* EBStarRateView.swift in Sources */,
 				83BA49EC2117E8EA0085FB68 /* EBGoodsViewController.swift in Sources */,
+				8360088F21212ED000C9F866 /* EBOrderListTableViewCell.swift in Sources */,
+				8360087F212119CC00C9F866 /* String+Size.swift in Sources */,
 				83CCDA74211C0FCD002E64C8 /* Date+extension.swift in Sources */,
 				83CCDA70211BD13D002E64C8 /* CartTime.swift in Sources */,
 				834BF4F6211AB93600C6C76E /* CartGood.swift in Sources */,
 				8389AF162112CBD10066999D /* EBAccountApi.swift in Sources */,
 				83CCDA72211BED40002E64C8 /* EBDatePickerView.swift in Sources */,
 				83CCDA78211C1D34002E64C8 /* EBMarkTableViewCell.swift in Sources */,
+				83600878211D8D3200C9F866 /* EBNoteTableViewCell.swift in Sources */,
 				84932C9221160CE200431C57 /* EBContentView.swift in Sources */,
 				84BE8EB92116CF3200AE755E /* EBSearchMapViewController.swift in Sources */,
 				84BE8ECA21170A2D00AE755E /* EBDummy.mm in Sources */,
 				834BF4F5211AB93600C6C76E /* InfoResult.swift in Sources */,
 				834BF4F4211AB93600C6C76E /* AllGood.swift in Sources */,
+				83CCDA9B211D37C9002E64C8 /* BaseInfo.swift in Sources */,
 				84BE8E6E2116A05B00AE755E /* EBConfig.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
