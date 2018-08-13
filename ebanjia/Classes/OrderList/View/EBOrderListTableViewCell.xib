@@ -86,7 +86,7 @@
                             <constraint firstAttribute="height" constant="25" id="pna-8o-603"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <state key="normal" title="提交订单">
+                        <state key="normal" title="订单详情">
                             <color key="titleColor" red="0.058823529409999999" green="0.5568627451" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
                         <userDefinedRuntimeAttributes>
@@ -107,7 +107,7 @@
                             <constraint firstAttribute="width" constant="60" id="nQa-DY-m32"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <state key="normal" title="提交订单">
+                        <state key="normal" title="进入砍价">
                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </state>
                         <userDefinedRuntimeAttributes>

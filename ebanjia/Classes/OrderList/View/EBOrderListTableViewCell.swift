@@ -9,6 +9,11 @@
 import UIKit
 
 class EBOrderListTableViewCell: UITableViewCell {
+    
+    var kanjiaTap: ((Int)->())?
+    var orderTap: ((Int)->())?
+    public var orderId: Int?
+
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var adressOutLabel: UILabel!
@@ -26,7 +31,13 @@ class EBOrderListTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     @IBAction func kanjiaTap(_ sender: Any) {
+        if let _kanjiaTap = kanjiaTap {
+            _kanjiaTap(orderId ?? 0)
+        }
     }
     @IBAction func orderTap(_ sender: Any) {
+        if let _orderTap = orderTap {
+            _orderTap(orderId ?? 0)
+        }
     }
 }

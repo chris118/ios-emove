@@ -64,6 +64,8 @@ extension EBOrderListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueCell(EBOrderListTableViewCell.self)
         if let _result = respData?.result?[indexPath.row] {
+            cell.orderId = respData?.result?[indexPath.row].orderId
+            
             cell.titleLabel.text = _result.orderSn ?? ""
             cell.adressOutLabel.text = _result.moveoutAddress ?? ""
             cell.adressInLabel.text = _result.moveinAddress ?? ""
@@ -74,6 +76,14 @@ extension EBOrderListViewController: UITableViewDataSource {
                  cell.statusLabel.text = "完成"
             }else {
                  cell.statusLabel.text = "未完成"
+            }
+            
+            cell.kanjiaTap = {[weak self] orderId in
+                
+            }
+            
+            cell.orderTap = {[weak self] orderId in
+                
             }
         }
         return cell
