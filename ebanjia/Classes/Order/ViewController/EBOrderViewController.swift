@@ -9,13 +9,14 @@
 import UIKit
 
 class EBOrderViewController: UIViewController {
+    var orderId: Int?
+    
     @IBOutlet weak var tableView: UITableView!
     
     private var respData: EBResponse<OrderResult>?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadData()
         setupUI()
     }
     
@@ -24,18 +25,29 @@ class EBOrderViewController: UIViewController {
     }
     
     private func setupUI() {
-        let item = UIBarButtonItem(title: "提交订单", style: UIBarButtonItemStyle.plain, target: self, action: #selector(nextTap))
-        self.navigationItem.rightBarButtonItem = item
-        
         self.tableView.registerNibWithCell(EB2ColumnTableViewCell.self)
         self.tableView.registerNibWithCell(EB3ColumnTableViewCell.self)
         self.tableView.registerNibWithCell(EBInputTableViewCell.self)
         self.tableView.registerNibWithCell(EBMarkTableViewCell.self)
         self.tableView.registerNibWithCell(EBNoteTableViewCell.self)
         self.tableView.tableFooterView = UIView()
+        
+        if let _ = orderId {
+            loadDataByID()
+        }else {
+            let item = UIBarButtonItem(title: "提交订单", style: UIBarButtonItemStyle.plain, target: self, action: #selector(nextTap))
+            self.navigationItem.rightBarButtonItem = item
+            loadData()
+        }
+
+
     }
     
     private func loadData() {
+        respData = EBResponse(JSONString: json)
+    }
+    
+    private func loadDataByID() {
         respData = EBResponse(JSONString: json)
     }
     

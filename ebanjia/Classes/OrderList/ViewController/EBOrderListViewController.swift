@@ -32,6 +32,7 @@ class EBOrderListViewController: UIViewController {
     }
     
     private func setupUI() {
+        self.title = "订单列表"
         self.tableView.registerNibWithCell(EBOrderListTableViewCell.self)
         self.tableView.tableFooterView = UIView()
     }
@@ -79,11 +80,15 @@ extension EBOrderListViewController: UITableViewDataSource {
             }
             
             cell.kanjiaTap = {[weak self] orderId in
-                
+                let kanjiaVC = EBKanjiaViewController()
+                 kanjiaVC.orderId = orderId
+                self?.navigationController?.pushViewController(kanjiaVC, animated: true)
             }
             
             cell.orderTap = {[weak self] orderId in
-                
+                let orderVC = EBOrderViewController()
+                orderVC.orderId = orderId
+                self?.navigationController?.pushViewController(orderVC, animated: true)
             }
         }
         return cell

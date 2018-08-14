@@ -25,6 +25,8 @@
 		8360088E21212ED000C9F866 /* EBOrderListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8360088A21212ED000C9F866 /* EBOrderListTableViewCell.xib */; };
 		8360088F21212ED000C9F866 /* EBOrderListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8360088B21212ED000C9F866 /* EBOrderListTableViewCell.swift */; };
 		8360089021212ED000C9F866 /* EBOrderListResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8360088D21212ED000C9F866 /* EBOrderListResult.swift */; };
+		83600893212276FA00C9F866 /* EBKanjiaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83600891212276FA00C9F866 /* EBKanjiaViewController.swift */; };
+		83600894212276FA00C9F866 /* EBKanjiaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83600892212276FA00C9F866 /* EBKanjiaViewController.xib */; };
 		8389AEED211066940066999D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8389AEEC211066940066999D /* AppDelegate.swift */; };
 		8389AEF7211066950066999D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8389AEF5211066950066999D /* LaunchScreen.storyboard */; };
 		8389AF0021129A620066999D /* EBLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8389AEFE21129A620066999D /* EBLoginViewController.swift */; };
@@ -141,6 +143,8 @@
 		8360088A21212ED000C9F866 /* EBOrderListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EBOrderListTableViewCell.xib; sourceTree = "<group>"; };
 		8360088B21212ED000C9F866 /* EBOrderListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EBOrderListTableViewCell.swift; sourceTree = "<group>"; };
 		8360088D21212ED000C9F866 /* EBOrderListResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EBOrderListResult.swift; sourceTree = "<group>"; };
+		83600891212276FA00C9F866 /* EBKanjiaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EBKanjiaViewController.swift; sourceTree = "<group>"; };
+		83600892212276FA00C9F866 /* EBKanjiaViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EBKanjiaViewController.xib; sourceTree = "<group>"; };
 		8389AEE9211066940066999D /* ebanjia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ebanjia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8389AEEC211066940066999D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8389AEF6211066950066999D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -303,6 +307,8 @@
 			children = (
 				84BE8ED42117521300AE755E /* EBOrderListViewController.swift */,
 				84BE8ED52117521300AE755E /* EBOrderListViewController.xib */,
+				83600891212276FA00C9F866 /* EBKanjiaViewController.swift */,
+				83600892212276FA00C9F866 /* EBKanjiaViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -742,6 +748,7 @@
 				83CCDA7F211C2E8B002E64C8 /* EBVehicleViewController.xib in Resources */,
 				83BA49ED2117E8EA0085FB68 /* EBGoodsViewController.xib in Resources */,
 				8360087D211D939800C9F866 /* EB3ColumnTableViewCell.xib in Resources */,
+				83600894212276FA00C9F866 /* EBKanjiaViewController.xib in Resources */,
 				834BF508211BCF2A00C6C76E /* EBInfoExViewController.xib in Resources */,
 				83CCDA89211C31FC002E64C8 /* EBVehicleTableViewCell.xib in Resources */,
 				8389AEF7211066950066999D /* LaunchScreen.storyboard in Resources */,
@@ -807,6 +814,7 @@
 				83CCDA72211BED40002E64C8 /* EBDatePickerView.swift in Sources */,
 				83CCDA78211C1D34002E64C8 /* EBMarkTableViewCell.swift in Sources */,
 				83600878211D8D3200C9F866 /* EBNoteTableViewCell.swift in Sources */,
+				83600893212276FA00C9F866 /* EBKanjiaViewController.swift in Sources */,
 				84932C9221160CE200431C57 /* EBContentView.swift in Sources */,
 				84BE8EB92116CF3200AE755E /* EBSearchMapViewController.swift in Sources */,
 				84BE8ECA21170A2D00AE755E /* EBDummy.mm in Sources */,
