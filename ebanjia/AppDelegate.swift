@@ -17,8 +17,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, BMKGeneralDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         initBaiduMap()
         
+        var isLogin = false
+        if let _ = UserDefaults.standard.string(forKey: "token") {
+            isLogin = true
+        }
+        
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        let isLogin = true
         let rootVC: UIViewController!
         
         if isLogin {

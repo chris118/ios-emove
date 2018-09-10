@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import Moya
+import PKHUD
 
 class EBInfoViewController: UIViewController {
-    
+    private let serviceProvider = MoyaProvider<EBServiceApi>()
+
     private let elevatorOptions = ["有", "无"]
     private let assembleOptions = ["需要", "不需要"]
     
@@ -36,6 +39,8 @@ class EBInfoViewController: UIViewController {
         self.tableView.registerNibWithCell(EBInputTableViewCell.self)
         self.tableView.registerNibWithCell(EBSelectTableViewCell.self)
         self.tableView.tableFooterView = UIView()
+        
+        loadData()
     }
 
     deinit {
@@ -46,6 +51,26 @@ class EBInfoViewController: UIViewController {
         let goodsVC = EBGoodsViewController()
         goodsVC.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(goodsVC, animated: true)
+    }
+    
+    private func loadData() {
+        EBServiceManager.shared.request(target: EBServiceApi.info) { result in
+            switch result {
+            case let .success(response):
+                do {
+                    let resp = EBResponse<EBInfoResult>(JSONString: try response.mapString())
+                    if let _resp = resp, _resp.code == 0, let _result = _resp.result {
+                        
+                    }else {
+                        HUD.flash(.label(resp?.msg), delay: 1.0)
+                    }
+                } catch {
+                    print(MoyaError.jsonMapping(response))
+                }
+            case let .failure(error):
+                print(error.errorDescription ?? "网络错误")
+            }
+        }
     }
     
     private lazy var elevatorOutPickerView: EBItemPickerView = {

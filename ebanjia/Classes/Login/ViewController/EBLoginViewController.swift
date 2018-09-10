@@ -17,7 +17,7 @@ class EBLoginViewController: UIViewController {
     
     private var timer:Timer?
     private var counter = 60
-    private let accountProvider = MoyaProvider<EBAccountApi>()
+    private let serviceProvider = MoyaProvider<EBServiceApi>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +32,7 @@ class EBLoginViewController: UIViewController {
             HUD.flash(.label("请输入正确的手机号码"), delay: 1.0)
             return
         }
-        accountProvider.request(.requestVerifyCode(mobile: mobile)) { (result) in
+        serviceProvider.request(.requestVerifyCode(mobile: mobile)) { (result) in
             switch result {
             case let .success(response):
                 do {
@@ -67,13 +67,16 @@ class EBLoginViewController: UIViewController {
             HUD.flash(.label("请输入正确的手机号码"), delay: 1.0)
             return
         }
-        accountProvider.request(.login(mobile: mobile, code: "789456")) { (result) in
+        serviceProvider.request(.login(mobile: mobile, code: "789456")) { (result) in
             switch result {
             case let .success(response):
                 do {
                     print(try response.mapString())
-                    let resp = EBResponseEmpty(JSONString: try response.mapString())
-                    if resp?.code == 0 {
+                    let resp = EBResponse<LoginResult>(JSONString: try response.mapString())
+                    if let _resp = resp, _resp.code == 0, let _result = _resp.result {
+                        UserDefaults.standard.set(_result.uid, forKey: "uid")
+                        UserDefaults.standard.set(_result.token, forKey: "token")
+
                        let infoVC = EBInfoViewController()
                         let navi = UINavigationController(rootViewController: infoVC)
                         self.present(navi, animated: true, completion: nil)

@@ -1,5 +1,5 @@
 //
-//  EBAccountApi.swift
+//  EBServiceApi.swift
 //  ebanjia
 //
 //  Created by Chris on 2018/8/2.
@@ -9,12 +9,13 @@
 import Foundation
 import Moya
 
-enum EBAccountApi {
+enum EBServiceApi {
     case requestVerifyCode(mobile: String)
     case login(mobile: String, code: String)
+    case info
 }
 
-extension EBAccountApi : TargetType {
+extension EBServiceApi : TargetType {
     //服务器地址
     var baseURL: URL {
         return URL(string: "https://api.ebanjia.cn")!
@@ -27,6 +28,8 @@ extension EBAccountApi : TargetType {
             return "/send/login-code"
         case .login(_, _):
             return "/code/login"
+        case .info:
+            return "/cart/address"
         }
     }
     
@@ -37,6 +40,8 @@ extension EBAccountApi : TargetType {
             return .get
         case .login(_, _):
             return .post
+        case .info:
+            return .get
         }
     }
     
@@ -49,7 +54,21 @@ extension EBAccountApi : TargetType {
             params["code"] = code
         case .requestVerifyCode(let mobile):
              params["username"] = mobile
+         case .info:
+            params["banjia_type"] = 1
+            break
         }
+        
+        let uid = UserDefaults.standard.string(forKey: "uid")
+        if let _uid = uid {
+            params["uid"] = _uid
+        }
+        let token = UserDefaults.standard.string(forKey: "token")
+        if let _token = token {
+            params["token"] = _token
+        }
+        
+        params["eappid"] = 8101
         
         Swift.print("✈ -------------------------------------------- ✈")
         Swift.print("\(self.baseURL)\(self.path)")

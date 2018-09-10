@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		830A24A32146117200F44DF5 /* TegKeychainConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830A24A02146117200F44DF5 /* TegKeychainConstants.swift */; };
+		830A24A42146117200F44DF5 /* KeychainSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830A24A12146117200F44DF5 /* KeychainSwift.swift */; };
+		830A24A52146117200F44DF5 /* KeychainSwiftAccessOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830A24A22146117200F44DF5 /* KeychainSwiftAccessOptions.swift */; };
+		830A24A821461B3400F44DF5 /* LoginResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830A24A721461B3400F44DF5 /* LoginResult.swift */; };
+		830A24AA21463AF500F44DF5 /* EBInfoResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830A24A921463AF400F44DF5 /* EBInfoResult.swift */; };
+		830A24AC21463B1500F44DF5 /* EBMovein.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830A24AB21463B1500F44DF5 /* EBMovein.swift */; };
+		830A24AE2146402A00F44DF5 /* EBResponsePlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830A24AD2146402A00F44DF5 /* EBResponsePlugin.swift */; };
+		830A24B02146418E00F44DF5 /* EBServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830A24AF2146418E00F44DF5 /* EBServiceManager.swift */; };
 		834BF4F4211AB93600C6C76E /* AllGood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834BF4F0211AB93600C6C76E /* AllGood.swift */; };
 		834BF4F5211AB93600C6C76E /* InfoResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834BF4F1211AB93600C6C76E /* InfoResult.swift */; };
 		834BF4F6211AB93600C6C76E /* CartGood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834BF4F2211AB93600C6C76E /* CartGood.swift */; };
@@ -33,7 +41,7 @@
 		8389AF0121129A620066999D /* EBLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8389AEFF21129A620066999D /* EBLoginViewController.xib */; };
 		8389AF0721129AC20066999D /* EBInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8389AF0521129AC20066999D /* EBInfoViewController.swift */; };
 		8389AF0821129AC20066999D /* EBInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8389AF0621129AC20066999D /* EBInfoViewController.xib */; };
-		8389AF162112CBD10066999D /* EBAccountApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8389AF152112CBD10066999D /* EBAccountApi.swift */; };
+		8389AF162112CBD10066999D /* EBServiceApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8389AF152112CBD10066999D /* EBServiceApi.swift */; };
 		8389AF1D2112D39D0066999D /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8389AF1C2112D39D0066999D /* Result.framework */; };
 		8389AF1F2112D3AB0066999D /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8389AF1C2112D39D0066999D /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8389AF252112E29F0066999D /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8389AF242112E29F0066999D /* ObjectMapper.framework */; };
@@ -125,6 +133,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		830A24A02146117200F44DF5 /* TegKeychainConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegKeychainConstants.swift; sourceTree = "<group>"; };
+		830A24A12146117200F44DF5 /* KeychainSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainSwift.swift; sourceTree = "<group>"; };
+		830A24A22146117200F44DF5 /* KeychainSwiftAccessOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainSwiftAccessOptions.swift; sourceTree = "<group>"; };
+		830A24A721461B3400F44DF5 /* LoginResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginResult.swift; sourceTree = "<group>"; };
+		830A24A921463AF400F44DF5 /* EBInfoResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EBInfoResult.swift; sourceTree = "<group>"; };
+		830A24AB21463B1500F44DF5 /* EBMovein.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EBMovein.swift; sourceTree = "<group>"; };
+		830A24AD2146402A00F44DF5 /* EBResponsePlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EBResponsePlugin.swift; sourceTree = "<group>"; };
+		830A24AF2146418E00F44DF5 /* EBServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EBServiceManager.swift; sourceTree = "<group>"; };
 		834BF4F0211AB93600C6C76E /* AllGood.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllGood.swift; sourceTree = "<group>"; };
 		834BF4F1211AB93600C6C76E /* InfoResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoResult.swift; sourceTree = "<group>"; };
 		834BF4F2211AB93600C6C76E /* CartGood.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartGood.swift; sourceTree = "<group>"; };
@@ -153,7 +169,7 @@
 		8389AEFF21129A620066999D /* EBLoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EBLoginViewController.xib; sourceTree = "<group>"; };
 		8389AF0521129AC20066999D /* EBInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EBInfoViewController.swift; sourceTree = "<group>"; };
 		8389AF0621129AC20066999D /* EBInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EBInfoViewController.xib; sourceTree = "<group>"; };
-		8389AF152112CBD10066999D /* EBAccountApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EBAccountApi.swift; sourceTree = "<group>"; };
+		8389AF152112CBD10066999D /* EBServiceApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EBServiceApi.swift; sourceTree = "<group>"; };
 		8389AF1C2112D39D0066999D /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		8389AF242112E29F0066999D /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
 		8389AF292112E3C40066999D /* EBResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EBResponse.swift; sourceTree = "<group>"; };
@@ -252,6 +268,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		830A249F2146111200F44DF5 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				830A24A12146117200F44DF5 /* KeychainSwift.swift */,
+				830A24A22146117200F44DF5 /* KeychainSwiftAccessOptions.swift */,
+				830A24A02146117200F44DF5 /* TegKeychainConstants.swift */,
+			);
+			name = Vendor;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		830A24A62146179000F44DF5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				830A24A721461B3400F44DF5 /* LoginResult.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		834BF4EC211AB78200C6C76E /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -350,6 +385,7 @@
 		8389AEEB211066940066999D /* ebanjia */ = {
 			isa = PBXGroup;
 			children = (
+				830A249F2146111200F44DF5 /* Vendor */,
 				84BE8E6C2116A04F00AE755E /* Conifg */,
 				84932C8D21160CC700431C57 /* Component */,
 				8389AF362112FA080066999D /* Extensions */,
@@ -386,7 +422,7 @@
 		8389AF0321129AA10066999D /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				8389AF1B2112D1970066999D /* Service */,
+				830A24A62146179000F44DF5 /* Model */,
 				8389AF1A2112D1860066999D /* ViewController */,
 			);
 			path = Login;
@@ -395,9 +431,8 @@
 		8389AF0421129AAE0066999D /* Info */ = {
 			isa = PBXGroup;
 			children = (
-				8389AF2F2112F8D60066999D /* View */,
+				8389AF0A2112CA180066999D /* Model */,
 				8389AF092112CA070066999D /* ViewController */,
-				8389AF0A2112CA180066999D /* Service */,
 			);
 			path = Info;
 			sourceTree = "<group>";
@@ -413,11 +448,13 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
-		8389AF0A2112CA180066999D /* Service */ = {
+		8389AF0A2112CA180066999D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				830A24AB21463B1500F44DF5 /* EBMovein.swift */,
+				830A24A921463AF400F44DF5 /* EBInfoResult.swift */,
 			);
-			path = Service;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		8389AF172112D1590066999D /* Frameworks */ = {
@@ -456,27 +493,15 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
-		8389AF1B2112D1970066999D /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				8389AF152112CBD10066999D /* EBAccountApi.swift */,
-			);
-			path = Service;
-			sourceTree = "<group>";
-		};
 		8389AF282112E3A60066999D /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				8389AF152112CBD10066999D /* EBServiceApi.swift */,
 				8389AF292112E3C40066999D /* EBResponse.swift */,
+				830A24AD2146402A00F44DF5 /* EBResponsePlugin.swift */,
+				830A24AF2146418E00F44DF5 /* EBServiceManager.swift */,
 			);
 			path = Service;
-			sourceTree = "<group>";
-		};
-		8389AF2F2112F8D60066999D /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		8389AF302112F8EB0066999D /* Base */ = {
@@ -773,11 +798,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				830A24AA21463AF500F44DF5 /* EBInfoResult.swift in Sources */,
 				84BE8ECD2117438200AE755E /* EBMainViewController.swift in Sources */,
 				83CCDA83211C2F3A002E64C8 /* UsableFleet.swift in Sources */,
 				84932C9421160CE200431C57 /* EBItemPickerView.swift in Sources */,
 				83CCDA6C211BD13D002E64C8 /* CartContact.swift in Sources */,
 				8389AF3B211304A90066999D /* EBSelectTableViewCell.swift in Sources */,
+				830A24A42146117200F44DF5 /* KeychainSwift.swift in Sources */,
 				834BF4FD211ABD2700C6C76E /* EBGoodsTableViewCell.swift in Sources */,
 				834BF507211BCF2A00C6C76E /* EBInfoExViewController.swift in Sources */,
 				84932C9321160CE200431C57 /* EBMaskView.swift in Sources */,
@@ -785,14 +812,18 @@
 				834BF501211AD2F700C6C76E /* EBCategoryTableViewCell.swift in Sources */,
 				8389AEED211066940066999D /* AppDelegate.swift in Sources */,
 				83CCDA6F211BD13D002E64C8 /* TimeSlot.swift in Sources */,
+				830A24AE2146402A00F44DF5 /* EBResponsePlugin.swift in Sources */,
 				8389AF2A2112E3C40066999D /* EBResponse.swift in Sources */,
 				8389AF0021129A620066999D /* EBLoginViewController.swift in Sources */,
 				84BE8ED1211751D900AE755E /* EBHomeViewController.swift in Sources */,
 				8389AF3E211314A40066999D /* EBHeaderView.swift in Sources */,
+				830A24AC21463B1500F44DF5 /* EBMovein.swift in Sources */,
+				830A24B02146418E00F44DF5 /* EBServiceManager.swift in Sources */,
 				8360089021212ED000C9F866 /* EBOrderListResult.swift in Sources */,
 				8389AF342112F9190066999D /* EBInputTableViewCell.swift in Sources */,
 				83CCDA99211D378F002E64C8 /* OrderResult.swift in Sources */,
 				83CCDA88211C31FC002E64C8 /* EBVehicleTableViewCell.swift in Sources */,
+				830A24A821461B3400F44DF5 /* LoginResult.swift in Sources */,
 				83CCDA97211D378F002E64C8 /* TotalInfo.swift in Sources */,
 				83CCDA91211D377D002E64C8 /* EBOrderViewController.swift in Sources */,
 				8389AF0721129AC20066999D /* EBInfoViewController.swift in Sources */,
@@ -803,6 +834,7 @@
 				84BE8ED62117521300AE755E /* EBOrderListViewController.swift in Sources */,
 				8360087C211D939800C9F866 /* EB3ColumnTableViewCell.swift in Sources */,
 				83CCDA6D211BD13D002E64C8 /* InfoExResult.swift in Sources */,
+				830A24A32146117200F44DF5 /* TegKeychainConstants.swift in Sources */,
 				83CCDA8C211C3703002E64C8 /* EBStarRateView.swift in Sources */,
 				83BA49EC2117E8EA0085FB68 /* EBGoodsViewController.swift in Sources */,
 				8360088F21212ED000C9F866 /* EBOrderListTableViewCell.swift in Sources */,
@@ -810,11 +842,12 @@
 				83CCDA74211C0FCD002E64C8 /* Date+extension.swift in Sources */,
 				83CCDA70211BD13D002E64C8 /* CartTime.swift in Sources */,
 				834BF4F6211AB93600C6C76E /* CartGood.swift in Sources */,
-				8389AF162112CBD10066999D /* EBAccountApi.swift in Sources */,
+				8389AF162112CBD10066999D /* EBServiceApi.swift in Sources */,
 				83CCDA72211BED40002E64C8 /* EBDatePickerView.swift in Sources */,
 				83CCDA78211C1D34002E64C8 /* EBMarkTableViewCell.swift in Sources */,
 				83600878211D8D3200C9F866 /* EBNoteTableViewCell.swift in Sources */,
 				83600893212276FA00C9F866 /* EBKanjiaViewController.swift in Sources */,
+				830A24A52146117200F44DF5 /* KeychainSwiftAccessOptions.swift in Sources */,
 				84932C9221160CE200431C57 /* EBContentView.swift in Sources */,
 				84BE8EB92116CF3200AE755E /* EBSearchMapViewController.swift in Sources */,
 				84BE8ECA21170A2D00AE755E /* EBDummy.mm in Sources */,
