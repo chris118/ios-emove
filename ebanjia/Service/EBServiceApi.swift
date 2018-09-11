@@ -13,6 +13,9 @@ enum EBServiceApi {
     case requestVerifyCode(mobile: String)
     case login(mobile: String, code: String)
     case info
+    case infoUpdate(params: [String: Any])
+    case goods
+    case goodsCartUpdate(cartGoods : [CartGood])
 }
 
 extension EBServiceApi : TargetType {
@@ -30,6 +33,12 @@ extension EBServiceApi : TargetType {
             return "/code/login"
         case .info:
             return "/cart/address"
+        case .infoUpdate(_):
+            return "/cart/address"
+        case .goods:
+            return "/cart/goods"
+        case .goodsCartUpdate(_):
+            return "/cart/goods"
         }
     }
     
@@ -42,6 +51,12 @@ extension EBServiceApi : TargetType {
             return .post
         case .info:
             return .get
+        case .infoUpdate(_):
+            return .post
+        case .goods:
+            return .get
+        case .goodsCartUpdate(_):
+            return .post
         }
     }
     
@@ -55,10 +70,19 @@ extension EBServiceApi : TargetType {
         case .requestVerifyCode(let mobile):
              params["username"] = mobile
          case .info:
-            params["banjia_type"] = 1
+            break
+        case .infoUpdate(let _params):
+            params = _params
+        case .goods:
+            break
+        case .goodsCartUpdate(let cartGoods):
+            params["goods"] = cartGoods.toJSONString()
             break
         }
         
+        params["banjia_type"] = 1
+        params["eappid"] = 8101
+
         let uid = UserDefaults.standard.string(forKey: "uid")
         if let _uid = uid {
             params["uid"] = _uid
@@ -67,8 +91,6 @@ extension EBServiceApi : TargetType {
         if let _token = token {
             params["token"] = _token
         }
-        
-        params["eappid"] = 8101
         
         Swift.print("✈ -------------------------------------------- ✈")
         Swift.print("\(self.baseURL)\(self.path)")

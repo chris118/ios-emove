@@ -19,7 +19,13 @@ class CartGood : NSObject, NSCoding, Mappable{
 		return CartGood()
 	}
 	required init?(map: Map){}
-	private override init(){}
+    override init(){
+        goodsCubage = 0
+        goodsId = 0
+        goodsName = ""
+        goodsNum = 0
+        parentCategoryId = 0
+    }
 
 	func mapping(map: Map)
 	{

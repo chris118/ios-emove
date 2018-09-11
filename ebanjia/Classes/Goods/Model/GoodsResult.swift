@@ -6,7 +6,7 @@ import Foundation
 import ObjectMapper
 
 
-class InfoResult: NSCoding, Mappable{
+class GoodsResult: NSCoding, Mappable{
 
 	var allGoods : [AllGood]?
 	var cartGoods : [CartGood]?

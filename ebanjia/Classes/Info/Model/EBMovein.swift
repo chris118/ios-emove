@@ -22,7 +22,7 @@ class EBMovein : NSObject, NSCoding, Mappable{
 		return EBMovein()
 	}
 	required init?(map: Map){}
-	private override init(){}
+	override init(){}
 
 	func mapping(map: Map)
 	{

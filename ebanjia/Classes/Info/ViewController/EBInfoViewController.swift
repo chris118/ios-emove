@@ -15,18 +15,21 @@ class EBInfoViewController: UIViewController {
 
     private let elevatorOptions = ["有", "无"]
     private let assembleOptions = ["需要", "不需要"]
+    private let floorsOptions = ["1楼","2楼","3楼","4楼","5楼","6楼","7楼","8楼"]
     
     private var out_map_uid = ""
     private var out_adress = ""
     private var elevator_out_index = 0
+    private var floor_out_index = 0
     private var assemble_out_index = 0
-    private var out_distance = ""
+    private var out_distance = 0
     
     private var in_map_uid = ""
     private var in_adress = ""
     private var elevator_in_index = 0
+    private var floor_in_index = 0
     private var assemble_in_index = 0
-    private var in_distance = ""
+    private var in_distance = 0
     
     @IBOutlet weak var tableView: UITableView!
 
@@ -48,19 +51,72 @@ class EBInfoViewController: UIViewController {
     }
     
     @objc private func nextTap() {
-        let goodsVC = EBGoodsViewController()
-        goodsVC.hidesBottomBarWhenPushed = true
-        self.navigationController?.pushViewController(goodsVC, animated: true)
+        var moveout_params = [String: Any]()
+        moveout_params["address"] = out_adress
+        moveout_params["floor"] = floor_out_index + 1
+        moveout_params["is_elevator"] = elevator_out_index == 0 ? 1 : 0
+        moveout_params["is_handling"] = assemble_out_index == 0 ? 1 : 0
+        moveout_params["distance_meter"] = out_distance
+        moveout_params["uid"] = out_map_uid
+        
+        var movein_params = [String: Any]()
+        movein_params["address"] = in_adress
+        movein_params["floor"] = floor_in_index + 1
+        movein_params["is_elevator"] = elevator_in_index == 0 ? 1 : 0
+        movein_params["is_handling"] = assemble_in_index == 0 ? 1 : 0
+        movein_params["distance_meter"] = in_distance
+        movein_params["uid"] = in_map_uid
+        
+        var params = [String: Any]()
+        params["moveout"] = moveout_params
+        params["movein"] = movein_params
+        
+        EBServiceManager.shared.request(target: EBServiceApi.infoUpdate(params: params)) {[weak self] result in
+            switch result {
+            case let .success(response):
+                do {
+                    let resp = EBResponseEmpty(JSONString: try response.mapString())
+                    if let _resp = resp, _resp.code == 0 {
+                        let goodsVC = EBGoodsViewController()
+                        goodsVC.hidesBottomBarWhenPushed = true
+                        self?.navigationController?.pushViewController(goodsVC, animated: true)
+                    }else {
+                        HUD.flash(.label(resp?.msg), delay: 1.0)
+                    }
+                } catch {
+                    print(MoyaError.jsonMapping(response))
+                }
+            case let .failure(error):
+                print(error.errorDescription ?? "网络错误")
+            }
+        }
     }
     
     private func loadData() {
-        EBServiceManager.shared.request(target: EBServiceApi.info) { result in
+        EBServiceManager.shared.request(target: EBServiceApi.info) {[weak self] result in
+            guard let `self` = self else {return}
             switch result {
             case let .success(response):
                 do {
                     let resp = EBResponse<EBInfoResult>(JSONString: try response.mapString())
                     if let _resp = resp, _resp.code == 0, let _result = _resp.result {
+                        //moveout
+                        self.out_adress = _result.moveout?.address ?? ""
+                        self.elevator_out_index = (_result.moveout?.isElevator ?? 0) == 1 ? 0 : 1
+                        self.floor_out_index = (_result.moveout?.floor ?? 0) - 1
+                        self.assemble_out_index = (_result.moveout?.isHandling ?? 0) == 1 ? 0 : 1
+                        self.out_distance = _result.moveout?.distanceMeter ?? 0
+                        self.out_map_uid = _result.moveout?.uid ?? ""
                         
+                        //movein
+                        self.in_adress = _result.movein?.address ?? ""
+                        self.elevator_in_index = (_result.movein?.isElevator ?? 0) == 1 ? 0 : 1
+                        self.floor_in_index = (_result.movein?.floor ?? 0) - 1
+                        self.assemble_in_index = (_result.movein?.isHandling ?? 0) == 1 ? 0 : 1
+                        self.in_distance = _result.movein?.distanceMeter ?? 0
+                        self.in_map_uid = _result.movein?.uid ?? ""
+                        
+                        self.tableView.reloadData()
                     }else {
                         HUD.flash(.label(resp?.msg), delay: 1.0)
                     }
@@ -78,6 +134,16 @@ class EBInfoViewController: UIViewController {
          _pickerView.items = elevatorOptions
         _pickerView.didSelect = {[weak self]  index in
             self?.elevator_out_index = index
+            self?.tableView.reloadData()
+        }
+        return _pickerView
+    }()
+    
+    private lazy var floorsOutPickerView: EBItemPickerView = {
+        var _pickerView = EBItemPickerView()
+        _pickerView.items = floorsOptions
+        _pickerView.didSelect = {[weak self]  index in
+            self?.floor_out_index = index
             self?.tableView.reloadData()
         }
         return _pickerView
@@ -103,6 +169,16 @@ class EBInfoViewController: UIViewController {
         return _pickerView
     }()
     
+    private lazy var floorsInPickerView: EBItemPickerView = {
+        var _pickerView = EBItemPickerView()
+        _pickerView.items = floorsOptions
+        _pickerView.didSelect = {[weak self]  index in
+            self?.floor_in_index = index
+            self?.tableView.reloadData()
+        }
+        return _pickerView
+    }()
+    
     private lazy var assembleInPickerView: EBItemPickerView = {
         var _pickerView = EBItemPickerView()
         _pickerView.items = assembleOptions
@@ -121,6 +197,12 @@ extension EBInfoViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 0 , self.elevator_out_index == 1 {
+            return 5
+        }
+        if section == 1, self.elevator_in_index == 1 {
+            return 5
+        }
         return 4
     }
     
@@ -139,18 +221,44 @@ extension EBInfoViewController: UITableViewDataSource {
                 cell.valueLabel.text = elevatorOptions[elevator_out_index]
                 return cell
             case 2:
-                let cell = tableView.dequeueCell(EBSelectTableViewCell.self)
-                cell.titleLabel.text = "需要拼装"
-                cell.valueLabel.text = assembleOptions[assemble_out_index]
-                return cell
-            case 3:
-                let cell = tableView.dequeueCell(EBInputTableViewCell.self)
-                cell.titleLabel.text = "搬出距离"
-                cell.valueTextField.placeholder = "请填写搬出距离"
-                cell.valueChanged = {[weak self] value in
-                    self?.out_distance = value
+                if self.elevator_out_index == 1 {
+                    let cell = tableView.dequeueCell(EBSelectTableViewCell.self)
+                    cell.titleLabel.text = "选择楼层"
+                    cell.valueLabel.text = floorsOptions[floor_out_index]
+                    return cell
+                }else {
+                    let cell = tableView.dequeueCell(EBSelectTableViewCell.self)
+                    cell.titleLabel.text = "需要拼装"
+                    cell.valueLabel.text = assembleOptions[assemble_out_index]
+                    return cell
                 }
-                return cell
+            case 3:
+                if self.elevator_out_index == 1 {
+                    let cell = tableView.dequeueCell(EBSelectTableViewCell.self)
+                    cell.titleLabel.text = "需要拼装"
+                    cell.valueLabel.text = assembleOptions[assemble_out_index]
+                    return cell
+                }else {
+                    let cell = tableView.dequeueCell(EBInputTableViewCell.self)
+                    cell.titleLabel.text = "搬出距离"
+                    cell.valueTextField.placeholder = "请填写搬出距离"
+                    cell.valueTextField.text = "\(self.out_distance)"
+                    cell.valueChanged = {[weak self] value in
+                        self?.out_distance = Int(value) ?? 0
+                    }
+                    return cell
+                }
+            case 4:
+                if self.elevator_out_index == 1 {
+                    let cell = tableView.dequeueCell(EBInputTableViewCell.self)
+                    cell.titleLabel.text = "搬出距离"
+                    cell.valueTextField.placeholder = "请填写搬出距离"
+                    cell.valueTextField.text = "\(self.out_distance)"
+                    cell.valueChanged = {[weak self] value in
+                        self?.out_distance = Int(value) ?? 0
+                    }
+                    return cell
+                }
             default:
                 break
             }
@@ -168,18 +276,43 @@ extension EBInfoViewController: UITableViewDataSource {
                 cell.valueLabel.text = elevatorOptions[elevator_in_index]
                 return cell
             case 2:
-                let cell = tableView.dequeueCell(EBSelectTableViewCell.self)
-                cell.titleLabel.text = "需要拼装"
-                cell.valueLabel.text = assembleOptions[assemble_in_index]
-                return cell
+                 if self.elevator_in_index == 1 {
+                    let cell = tableView.dequeueCell(EBSelectTableViewCell.self)
+                    cell.titleLabel.text = "选择楼层"
+                    cell.valueLabel.text = floorsOptions[floor_in_index]
+                    return cell
+                 }else {
+                    let cell = tableView.dequeueCell(EBSelectTableViewCell.self)
+                    cell.titleLabel.text = "需要拼装"
+                    cell.valueLabel.text = assembleOptions[assemble_in_index]
+                    return cell
+                 }
             case 3:
-                let cell = tableView.dequeueCell(EBInputTableViewCell.self)
-                cell.titleLabel.text = "搬入距离"
-                cell.valueTextField.placeholder = "请填写搬入距离"
-                cell.valueChanged = {[weak self] value in
-                    self?.in_distance = value
+                 if self.elevator_in_index == 1 {
+                    let cell = tableView.dequeueCell(EBSelectTableViewCell.self)
+                    cell.titleLabel.text = "需要拼装"
+                    cell.valueLabel.text = assembleOptions[assemble_in_index]
+                    return cell
+                 }else {
+                    let cell = tableView.dequeueCell(EBInputTableViewCell.self)
+                    cell.titleLabel.text = "搬入距离"
+                    cell.valueTextField.placeholder = "请填写搬入距离"
+                    cell.valueTextField.text = "\(self.in_distance)"
+                    cell.valueChanged = {[weak self] value in
+                        self?.in_distance = Int(value) ?? 0
+                    }
+                    return cell
+                 }
+            case 4:
+                if self.elevator_in_index == 1 {
+                    let cell = tableView.dequeueCell(EBInputTableViewCell.self)
+                    cell.titleLabel.text = "搬入距离"
+                    cell.valueTextField.placeholder = "请填写搬入距离"
+                    cell.valueChanged = {[weak self] value in
+                        self?.in_distance = Int(value) ?? 0
+                    }
+                    return cell
                 }
-                return cell
             default:
                 break
             }
@@ -207,7 +340,15 @@ extension EBInfoViewController: UITableViewDelegate {
             case 1:
                 elevatorOutPickerView.show()
             case 2:
-                assembleOutPickerView.show()
+                if self.elevator_out_index == 1 {
+                    floorsOutPickerView.show()
+                }else {
+                    assembleOutPickerView.show()
+                }
+            case 3:
+                if self.elevator_out_index == 1 {
+                    assembleOutPickerView.show()
+                }
             default:
                 break
             }
@@ -224,7 +365,15 @@ extension EBInfoViewController: UITableViewDelegate {
             case 1:
                 elevatorInPickerView.show()
             case 2:
-                assembleInPickerView.show()
+                if self.elevator_in_index == 1 {
+                    floorsInPickerView.show()
+                }else {
+                    assembleInPickerView.show()
+                }
+            case 3:
+                if self.elevator_in_index == 1 {
+                    assembleInPickerView.show()
+                }
             default:
                 break
             }
