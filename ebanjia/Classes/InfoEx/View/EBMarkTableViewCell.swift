@@ -8,15 +8,23 @@
 
 import UIKit
 
-class EBMarkTableViewCell: UITableViewCell {
+class EBMarkTableViewCell: UITableViewCell, UITextViewDelegate {
 
+    public var valueChanged: ((_ value: String) -> ())?
+    
     @IBOutlet weak var markLabel: UITextView!
     override func awakeFromNib() {
         super.awakeFromNib()
+        markLabel.delegate = self
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
     
+     public func textViewDidChange(_ textView: UITextView){
+        if let _valueChanged = valueChanged {
+            _valueChanged(markLabel.text ?? "")
+        }
+    }
 }

@@ -5,7 +5,7 @@
 import Foundation 
 import ObjectMapper
 
-class InfoExResult: NSCoding, Mappable{
+class InfoExResult:NSObject, NSCoding, Mappable{
 
 	var cartContacts : CartContact?
 	var cartTime : CartTime?
@@ -14,6 +14,7 @@ class InfoExResult: NSCoding, Mappable{
 	required init?(map: Map){
     }
 
+    override init() {}
     func mapping(map: Map)
 	{
 		cartContacts <- map["cart_contacts"]

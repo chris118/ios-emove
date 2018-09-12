@@ -7,10 +7,16 @@
 //
 
 import UIKit
+import Moya
+import PKHUD
 
 class EBVehicleViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var arrowView: UILabel!
+    
+    private let sortTypes = ["订单最多","评分最高","离我最近"]
+    private let sortTypeVlaues = ["order","evaluate","none"]
+    private var sortTypeIndex = 0
     
     private var respData: EBResponse<VehicleResult>?
     private var select_id = 0
@@ -34,14 +40,46 @@ class EBVehicleViewController: UIViewController {
     }
     
     private func loadData() {
-        respData = EBResponse(JSONString: json)
-        select_id = respData?.result?.selectedFleetId ?? 0
-        tableView.reloadData()
+        EBServiceManager.shared.request(target: EBServiceApi.vehicle(order: sortTypeVlaues[sortTypeIndex])) {[weak self] result in
+            guard let `self` = self else {return}
+            switch result {
+            case let .success(response):
+                do {
+                    self.respData = EBResponse<VehicleResult>(JSONString: try response.mapString())
+                    if let _respData =  self.respData, _respData.code == 0, let _ = _respData.result {
+                        self.select_id = _respData.result?.selectedFleetId ?? 0
+                        self.tableView.reloadData()
+                    }else {
+                        HUD.flash(.label(self.respData?.msg), delay: 1.0)
+                    }
+                } catch {
+                    print(MoyaError.jsonMapping(response))
+                }
+            case let .failure(error):
+                print(error.errorDescription ?? "网络错误")
+            }
+        }
     }
     
     @objc private func nextTap() {
-        let orderVC = EBOrderViewController()
-        self.navigationController?.pushViewController(orderVC, animated: true)
+        EBServiceManager.shared.request(target: EBServiceApi.vehicleUpdate(fleet_id: select_id)) {[weak self] result in
+            switch result {
+            case let .success(response):
+                do {
+                    let resp = EBResponseEmpty(JSONString: try response.mapString())
+                    if let _resp = resp, _resp.code == 0 {
+                        let orderVC = EBOrderViewController()
+                        self?.navigationController?.pushViewController(orderVC, animated: true)
+                    }else {
+                        HUD.flash(.label(resp?.msg), delay: 1.0)
+                    }
+                } catch {
+                    print(MoyaError.jsonMapping(response))
+                }
+            case let .failure(error):
+                print(error.errorDescription ?? "网络错误")
+            }
+        }
     }
     
     @IBAction func typeTap(_ sender: Any) {
@@ -50,9 +88,9 @@ class EBVehicleViewController: UIViewController {
     
     private lazy var typePickerView: EBItemPickerView = {
         var _typePickerView = EBItemPickerView()
-        _typePickerView.items = ["订单最多","评分最高","离我最近"]
+        _typePickerView.items = sortTypes
         _typePickerView.didSelect = {[weak self] index in
-
+            self?.sortTypeIndex = index
         }
         return _typePickerView
     }()

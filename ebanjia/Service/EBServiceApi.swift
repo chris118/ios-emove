@@ -16,6 +16,10 @@ enum EBServiceApi {
     case infoUpdate(params: [String: Any])
     case goods
     case goodsCartUpdate(cartGoods : [CartGood])
+    case infoex
+    case infoexUpdate(params: [String: Any])
+    case vehicle(order: String)
+    case vehicleUpdate(fleet_id: Int)
 }
 
 extension EBServiceApi : TargetType {
@@ -39,6 +43,14 @@ extension EBServiceApi : TargetType {
             return "/cart/goods"
         case .goodsCartUpdate(_):
             return "/cart/goods"
+        case .infoex:
+            return "cart/time"
+        case .infoexUpdate(_):
+            return "cart/time"
+        case .vehicle(_):
+            return "cart/fleet"
+        case .vehicleUpdate(_):
+            return "cart/fleet"
         }
     }
     
@@ -56,6 +68,14 @@ extension EBServiceApi : TargetType {
         case .goods:
             return .get
         case .goodsCartUpdate(_):
+            return .post
+        case .infoex:
+            return .get
+        case .infoexUpdate(_):
+            return .post
+        case .vehicle(_):
+            return .get
+        case .vehicleUpdate(_):
             return .post
         }
     }
@@ -77,7 +97,14 @@ extension EBServiceApi : TargetType {
             break
         case .goodsCartUpdate(let cartGoods):
             params["goods"] = cartGoods.toJSONString()
+        case .infoex:
             break
+        case .infoexUpdate(let _params):
+            params = _params
+        case .vehicle(let order):
+            params["order_by_field"] = order
+        case .vehicleUpdate(let fleet_id):
+            params["fleet_id"] = fleet_id
         }
         
         params["banjia_type"] = 1

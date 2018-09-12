@@ -10,7 +10,7 @@ class CartTime : NSObject, NSCoding, Mappable{
 
 	var day : String?
 	var month : String?
-	var timeSlotId : Int?
+	var timeSlotId : String?
 	var year : String?
 
 
@@ -37,7 +37,7 @@ class CartTime : NSObject, NSCoding, Mappable{
 	{
          day = aDecoder.decodeObject(forKey: "day") as? String
          month = aDecoder.decodeObject(forKey: "month") as? String
-         timeSlotId = aDecoder.decodeObject(forKey: "time_slot_id") as? Int
+         timeSlotId = aDecoder.decodeObject(forKey: "time_slot_id") as? String
          year = aDecoder.decodeObject(forKey: "year") as? String
 
 	}

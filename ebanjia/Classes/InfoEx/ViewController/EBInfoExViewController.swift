@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Moya
+import PKHUD
 
 class EBInfoExViewController: UIViewController {
 
@@ -47,39 +49,87 @@ class EBInfoExViewController: UIViewController {
     }
     
     private func loadData() {
-        respData = EBResponse(JSONString: json)
-        if let _timeSlot = respData?.result?.timeSlot {
-            for slot in _timeSlot {
-                timeSlot_list_string.append(slot.title ?? "")
-                timeSlot_list[slot.timeSlotId ?? -1] = slot.title ?? ""
+        EBServiceManager.shared.request(target: EBServiceApi.infoex) {[weak self] result in
+            guard let `self` = self else {return}
+            switch result {
+            case let .success(response):
+                do {
+                    self.respData = EBResponse<InfoExResult>(JSONString: try response.mapString())
+                    if let _respData =  self.respData, _respData.code == 0, let _ = _respData.result {
+                        if let _timeSlot = _respData.result?.timeSlot {
+                            for slot in _timeSlot {
+                                self.timeSlot_list_string.append(slot.title ?? "")
+                                self.timeSlot_list[slot.timeSlotId ?? -1] = slot.title ?? ""
+                            }
+                        }
+                        if let _cartTime = _respData.result?.cartTime {
+                            let select_slot_id = Int(_cartTime.timeSlotId ?? "1") ?? 1
+                            self.duration_index = select_slot_id - 1
+                            
+                            var dateComponent = DateComponents.init()
+                            let calendar = Calendar.current
+                            dateComponent.year = Int(_cartTime.year ?? "")
+                            dateComponent.month = Int(_cartTime.month ?? "")
+                            dateComponent.day = Int(_cartTime.day ?? "")
+                            self.date = calendar.date(from: dateComponent) ?? Date()
+                        }
+                        
+                        if let _cartContacts = _respData.result?.cartContacts {
+                            self.contact = _cartContacts.userName ?? ""
+                            self.mobile = _cartContacts.userTelephone ?? ""
+                            self.mark = _cartContacts.userNote ?? ""
+                            let is_voice = _cartContacts.isInvoice ?? 0
+                            self.invoice_index = (is_voice == 1 ? 0 : 1)
+                        }
+                        
+                        self.tableView.reloadData()
+                    }else {
+                        HUD.flash(.label(self.respData?.msg), delay: 1.0)
+                    }
+                } catch {
+                    print(MoyaError.jsonMapping(response))
+                }
+            case let .failure(error):
+                print(error.errorDescription ?? "网络错误")
             }
         }
-        if let _cartTime = respData?.result?.cartTime {
-            let select_slot_id = _cartTime.timeSlotId ?? 0
-             duration_index = select_slot_id - 1
-            
-            var dateComponent = DateComponents.init()
-            let calendar = Calendar.current
-            dateComponent.year = Int(_cartTime.year ?? "")
-            dateComponent.month = Int(_cartTime.month ?? "")
-            dateComponent.day = Int(_cartTime.day ?? "")
-            date = calendar.date(from: dateComponent) ?? Date()
-        }
-        
-         if let _cartContacts = respData?.result?.cartContacts {
-            contact = _cartContacts.userName ?? ""
-            mobile = _cartContacts.userTelephone ?? ""
-            mark = _cartContacts.userNote ?? ""
-            let is_voice = _cartContacts.isInvoice ?? 0
-            invoice_index = (is_voice == 1 ? 0 : 1)
-        }
-
-        tableView.reloadData()
     }
     
     @objc private func nextTap() {
-        let vehicleVC = EBVehicleViewController()
-        self.navigationController?.pushViewController(vehicleVC, animated: true)
+        let calendar = Calendar.current
+        
+        let year = calendar.component(.year, from: date)
+        let month = calendar.component(.month, from: date)
+        let day = calendar.component(.day, from: date)
+        
+        var params = [String: Any]()
+        params["year"] = year
+        params["month"] = month
+        params["day"] = day
+        params["time_slot_id"] = duration_index + 1
+        params["user_name"] = contact
+        params["user_telephone"] = mobile
+        params["is_invoice"] = is_invoice == 0 ? 1 : 0
+        params["user_note"] = mark
+
+        EBServiceManager.shared.request(target: EBServiceApi.infoexUpdate(params: params)) {[weak self] result in
+            switch result {
+            case let .success(response):
+                do {
+                    let resp = EBResponseEmpty(JSONString: try response.mapString())
+                    if let _resp = resp, _resp.code == 0 {
+                        let vehicleVC = EBVehicleViewController()
+                        self?.navigationController?.pushViewController(vehicleVC, animated: true)
+                    }else {
+                        HUD.flash(.label(resp?.msg), delay: 1.0)
+                    }
+                } catch {
+                    print(MoyaError.jsonMapping(response))
+                }
+            case let .failure(error):
+                print(error.errorDescription ?? "网络错误")
+            }
+        }
     }
     
     private lazy var datePickerView: EBDatePickerView = {
@@ -156,12 +206,18 @@ extension EBInfoExViewController: UITableViewDataSource {
                 cell.titleLabel.text = "负责人"
                 cell.valueTextField.placeholder = "请输入负责人姓名"
                 cell.valueTextField.text = contact
+                cell.valueChanged = {[weak self] value in
+                    self?.contact = value
+                }
                 return cell
             case 1:
                 let cell = tableView.dequeueCell(EBInputTableViewCell.self)
                 cell.titleLabel.text = "手机号码"
                 cell.valueTextField.placeholder = "请输入负责人手机号码"
                 cell.valueTextField.text = mobile
+                cell.valueChanged = {[weak self] value in
+                    self?.mobile = value
+                }
                 return cell
             default:
                 break
@@ -171,6 +227,9 @@ extension EBInfoExViewController: UITableViewDataSource {
             case 0:
                 let cell = tableView.dequeueCell(EBMarkTableViewCell.self)
                 cell.markLabel.text = mark
+                cell.valueChanged = {[weak self] value in
+                    self?.mark = value
+                }
                 return cell
             default:
                 break
