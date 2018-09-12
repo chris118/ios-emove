@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EBVehicleViewController" customModule="ebanjia" customModuleProvider="target">
             <connections>
+                <outlet property="sortButton" destination="kg4-1n-Yud" id="1HQ-ex-cKp"/>
                 <outlet property="tableView" destination="JNg-LJ-pOn" id="VBa-KK-y52"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

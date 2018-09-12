@@ -140,6 +140,7 @@ class EBGoodsViewController: UIViewController {
             goods_cout_per_second_category.append(item_count)
         }
         
+        categoryTableView.reloadData()
         goodsTableView.reloadData()
         cartTableView.reloadData()
         updateNumbers()

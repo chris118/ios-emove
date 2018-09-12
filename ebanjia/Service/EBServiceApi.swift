@@ -20,6 +20,10 @@ enum EBServiceApi {
     case infoexUpdate(params: [String: Any])
     case vehicle(order: String)
     case vehicleUpdate(fleet_id: Int)
+    case order
+    case orderById(order_id: Int)
+    case orderSubmit
+    case orderList(page: Int, order_status: String)
 }
 
 extension EBServiceApi : TargetType {
@@ -51,6 +55,14 @@ extension EBServiceApi : TargetType {
             return "cart/fleet"
         case .vehicleUpdate(_):
             return "cart/fleet"
+        case .order:
+            return "cart/finish"
+        case .orderById(_):
+            return "get/order"
+        case .orderSubmit:
+            return "order/save"
+        case .orderList(_, _):
+            return "get/orders"
         }
     }
     
@@ -77,6 +89,14 @@ extension EBServiceApi : TargetType {
             return .get
         case .vehicleUpdate(_):
             return .post
+        case .order:
+            return .get
+        case .orderById(_):
+            return .get
+        case .orderSubmit:
+            return .post
+        case .orderList(_, _):
+            return .get
         }
     }
     
@@ -105,6 +125,16 @@ extension EBServiceApi : TargetType {
             params["order_by_field"] = order
         case .vehicleUpdate(let fleet_id):
             params["fleet_id"] = fleet_id
+        case .order:
+            break
+        case .orderById(let order_id):
+             params["order_id"] = order_id
+        case .orderSubmit:
+            break
+        case .orderList(let page, let order_status):
+            params["page"] = page
+            params["order_status"] = order_status
+            break
         }
         
         params["banjia_type"] = 1

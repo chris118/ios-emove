@@ -8,6 +8,7 @@
 
 import Foundation
 import Moya
+import PKHUD
 
 final class EBServiceManager {
     static let shared = EBServiceManager()
@@ -17,10 +18,16 @@ final class EBServiceManager {
         }
     }
     
-    static private var _complete: Completion?
+    static let activityPlugin = NetworkActivityPlugin { (changeType, targetType) in
+        if changeType == .began {
+            HUD.show(.progress)
+        }else if changeType == .ended {
+            PKHUD.sharedHUD.hide()
+        }
+    }
     
-    private let serviceProvider = MoyaProvider<EBServiceApi>()
-
+    static private var _complete: Completion?
+    private let serviceProvider = MoyaProvider<EBServiceApi>(plugins: [activityPlugin])
     func request(target: TargetType, completion :@escaping Completion) -> Void{
         if let _ = target as? EBServiceApi {
             EBServiceManager._complete = completion
@@ -31,6 +38,10 @@ final class EBServiceManager {
                         Swift.print("✈ -------------------------------------------- ✈")
                         Swift.print(try response.mapString())
                         Swift.print("✈ -------------------------------------------- ✈")
+                        let resp = EBResponseEmpty(JSONString: try response.mapString())
+                        if resp?.code == 6004 {
+                            UIApplication.shared.keyWindow?.rootViewController = EBLoginViewController()
+                        }
                     } catch {
                         print(MoyaError.jsonMapping(response))
                     }

@@ -76,10 +76,11 @@ class EBLoginViewController: UIViewController {
                     if let _resp = resp, _resp.code == 0, let _result = _resp.result {
                         UserDefaults.standard.set(_result.uid, forKey: "uid")
                         UserDefaults.standard.set(_result.token, forKey: "token")
-
-                       let infoVC = EBInfoViewController()
-                        let navi = UINavigationController(rootViewController: infoVC)
-                        self.present(navi, animated: true, completion: nil)
+                        
+                        UIApplication.shared.keyWindow?.rootViewController = EBMainViewController()
+//                       let infoVC = EBInfoViewController()
+//                        let navi = UINavigationController(rootViewController: infoVC)
+//                        self.present(navi, animated: true, completion: nil)
                     }else {
                         HUD.flash(.label(resp?.msg), delay: 1.0)
                     }

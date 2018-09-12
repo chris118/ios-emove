@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import Moya
+import PKHUD
 
 class EBOrderViewController: UIViewController {
     var orderId: Int?
     
     @IBOutlet weak var tableView: UITableView!
-    
+
     private var respData: EBResponse<OrderResult>?
 
     override func viewDidLoad() {
@@ -31,6 +33,7 @@ class EBOrderViewController: UIViewController {
         self.tableView.registerNibWithCell(EBMarkTableViewCell.self)
         self.tableView.registerNibWithCell(EBNoteTableViewCell.self)
         self.tableView.tableFooterView = UIView()
+        self.tableView.tableHeaderView = headerView
         
         if let _ = orderId {
             loadDataByID()
@@ -39,25 +42,96 @@ class EBOrderViewController: UIViewController {
             self.navigationItem.rightBarButtonItem = item
             loadData()
         }
-
-
     }
     
     private func loadData() {
-        respData = EBResponse(JSONString: json)
+        EBServiceManager.shared.request(target: EBServiceApi.order) {[weak self] result in
+            guard let `self` = self else {return}
+            switch result {
+            case let .success(response):
+                do {
+                    self.respData = EBResponse<OrderResult>(JSONString: try response.mapString())
+                    if let _respData =  self.respData, _respData.code == 0, let _ = _respData.result {
+                        self.respData = _respData
+                        self.tableView.reloadData()
+                    }else {
+                        HUD.flash(.label(self.respData?.msg), delay: 1.0)
+                    }
+                } catch {
+                    print(MoyaError.jsonMapping(response))
+                }
+            case let .failure(error):
+                print(error.errorDescription ?? "网络错误")
+            }
+        }
     }
     
     private func loadDataByID() {
-        respData = EBResponse(JSONString: json)
+        EBServiceManager.shared.request(target: EBServiceApi.orderById(order_id: orderId ?? 0)) {[weak self] result in
+            guard let `self` = self else {return}
+            switch result {
+            case let .success(response):
+                do {
+                    self.respData = EBResponse<OrderResult>(JSONString: try response.mapString())
+                    if let _respData =  self.respData, _respData.code == 0, let _ = _respData.result {
+                        self.respData = _respData
+                        self.tableView.reloadData()
+                    }else {
+                        HUD.flash(.label(self.respData?.msg), delay: 1.0)
+                    }
+                } catch {
+                    print(MoyaError.jsonMapping(response))
+                }
+            case let .failure(error):
+                print(error.errorDescription ?? "网络错误")
+            }
+        }
     }
     
     @objc private func nextTap() {
-        self.tabBarController?.tabBar.isHidden = false
-        self.tabBarController?.selectedIndex = 2
-        
-        self.navigationController?.popToRootViewController(animated: false)
-
+        EBServiceManager.shared.request(target: EBServiceApi.orderSubmit) {[weak self] result in
+            guard let `self` = self else {return}
+            switch result {
+            case let .success(response):
+                do {
+                    let resp = EBResponseEmpty(JSONString: try response.mapString())
+                    if let _resp = resp, _resp.code == 0 {
+                        self.tabBarController?.tabBar.isHidden = false
+                        self.tabBarController?.selectedIndex = 2
+                        self.navigationController?.popToRootViewController(animated: false)
+                    }else {
+                        HUD.flash(.label(resp?.msg), delay: 1.0)
+                    }
+                } catch {
+                    print(MoyaError.jsonMapping(response))
+                }
+            case let .failure(error):
+                print(error.errorDescription ?? "网络错误")
+            }
+        }
     }
+    
+    private lazy var headerView: UIView = {
+        let view = UIView()
+        view.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 90)
+        view.backgroundColor = UIColor(red: 15/255.5, green: 142/255.0, blue: 233/155.0, alpha: 1)
+        
+        let label1 = UILabel(frame: CGRect(x: 0, y: 15, width: UIScreen.main.bounds.width, height: 20))
+        label1.textAlignment = .center
+        label1.textColor = UIColor.white
+        label1.font = UIFont.systemFont(ofSize: 12)
+        label1.text = "若订单信息有误或有疑问"
+        
+        let label2 = UILabel(frame: CGRect(x: 0, y: 45, width: UIScreen.main.bounds.width, height: 20))
+        label2.textAlignment = .center
+        label2.textColor = UIColor.white
+        label2.font = UIFont.systemFont(ofSize: 12)
+        label2.text = "可致电e搬家客服热线400-400-6668寻求帮助"
+        
+        view.addSubview(label1)
+        view.addSubview(label2)
+        return view
+    }()
 }
 
 
@@ -232,13 +306,5 @@ extension EBOrderViewController: UITableViewDelegate {
             headerView.titleLabel.text = "总计"
         }
         return headerView
-    }
-}
-
-extension EBOrderViewController {
-    var json: String  {
-        get {
-            return "{\"code\":0,\"msg\":\"\",\"result\":{\"banjia_type_title\":\"普通搬家\",\"user_name\":\"dd\",\"user_telephone\":\"11\",\"user_note\":\"dd\",\"moving_time\":\"2018-10-04 上午7:00—7:30\",\"moveout_address\":\"上海市 上海市杨浦区通北路589号保利绿地广场L楼\",\"moveout_floor\":1,\"moveout_is_elevator\":0,\"moveout_is_handling\":0,\"moveout_distance_meter\":44,\"movein_address\":\"上海市 凯旋北路1111号GG密室雷欧咖啡\",\"movein_floor\":1,\"movein_is_elevator\":0,\"movein_is_handling\":0,\"movein_distance_meter\":55,\"is_invoice\":0,\"fleet_name\":\"上海锦通搬场公司\",\"fleet_telephone\":\"021-55335533\",\"fleet_address\":\"上海市宝山区呼兰路455号\",\"distance_kilometer\":14.5,\"base_info\":[{\"type\":\"base\",\"title\":\"车辆基础价\",\"subtitle\":\"该费用包含运输车辆费用（）以及人员费用（驾驶员名，搬运工若干名）\",\"value\":800,\"unit\":\"元\"},{\"type\":\"base\",\"title\":\"运输公里收费\",\"subtitle\":\"该费用包含您的运输距离费用，基础运距为10.0公里，超出部分按每公里8元收费\",\"value\":20.8,\"unit\":\"元\"},{\"type\":\"base\",\"title\":\"楼层费用\",\"subtitle\":\"该费用包含您的上下楼层搬运费用，有电梯统一收费60元，无电梯按每层40元收费\",\"value\":0,\"unit\":\"元\"},{\"type\":\"base\",\"title\":\"拼装、分卸费用\",\"subtitle\":\"每增加一个装卸点收费。\",\"value\":0,\"unit\":\"元\"},{\"type\":\"base\",\"title\":\"搬运超距费\",\"subtitle\":\"基础运距为40米，超出部分按每米6元收费\",\"value\":354,\"unit\":\"元\"}],\"goods_info\":[{\"type\":\"goods\",\"title\":\"3门书橱（红木或柚木需拆装）\",\"subtitle\":\"该费用包含搬运、摆放费用\",\"value\":200,\"unit\":\"元\"},{\"type\":\"goods\",\"title\":\"柜子（红木或柚木）\",\"subtitle\":\"该费用包含搬运、摆放费用\",\"value\":50,\"unit\":\"元\"}],\"total_info\":[{\"type\":\"total\",\"title\":\"物品总体积\",\"subtitle\":\"根据您选择的物品计算\",\"value\":3.3,\"unit\":\"m³\"},{\"type\":\"total\",\"title\":\"总行程\",\"subtitle\":\"该距离为搬出地址至搬入地址的距离\",\"value\":12.6,\"unit\":\"公里\"},{\"type\":\"total\",\"title\":\"总费用\",\"subtitle\":\"本单可参加砍价活动，最低可砍至0元\",\"value\":1424.8,\"unit\":\"元\"}]}}"
-        }
     }
 }

@@ -103,7 +103,7 @@ class EBInfoViewController: UIViewController {
                         //moveout
                         self.out_adress = _result.moveout?.address ?? ""
                         self.elevator_out_index = (_result.moveout?.isElevator ?? 0) == 1 ? 0 : 1
-                        self.floor_out_index = (_result.moveout?.floor ?? 0) - 1
+                        self.floor_out_index = (_result.moveout?.floor ?? 1) - 1
                         self.assemble_out_index = (_result.moveout?.isHandling ?? 0) == 1 ? 0 : 1
                         self.out_distance = _result.moveout?.distanceMeter ?? 0
                         self.out_map_uid = _result.moveout?.uid ?? ""
@@ -111,7 +111,7 @@ class EBInfoViewController: UIViewController {
                         //movein
                         self.in_adress = _result.movein?.address ?? ""
                         self.elevator_in_index = (_result.movein?.isElevator ?? 0) == 1 ? 0 : 1
-                        self.floor_in_index = (_result.movein?.floor ?? 0) - 1
+                        self.floor_in_index = (_result.movein?.floor ?? 1) - 1
                         self.assemble_in_index = (_result.movein?.isHandling ?? 0) == 1 ? 0 : 1
                         self.in_distance = _result.movein?.distanceMeter ?? 0
                         self.in_map_uid = _result.movein?.uid ?? ""

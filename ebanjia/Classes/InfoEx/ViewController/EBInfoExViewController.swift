@@ -290,11 +290,3 @@ extension EBInfoExViewController: UITableViewDelegate {
         return headerView
     }
 }
-
-extension EBInfoExViewController {
-    var json: String  {
-        get {
-            return "{\"code\":0,\"msg\":\"已保存\",\"result\":{\"time_slot\":[{\"time_slot_id\":1,\"title\":\"上午7:00—7:30\"},{\"time_slot_id\":2,\"title\":\"中午10:00—12:00\"},{\"time_slot_id\":3,\"title\":\"下午1:00—2:00\"}],\"cart_time\":{\"year\":\"2018\",\"month\":\"10\",\"day\":\"4\",\"time_slot_id\":1},\"cart_contacts\":{\"user_name\":\"dd\",\"user_telephone\":\"11\",\"user_note\":\"dd\",\"is_invoice\":0}}}"
-        }
-    }
-}
