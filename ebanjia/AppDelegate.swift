@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, BMKGeneralDelegate {
         if let _ = UserDefaults.standard.string(forKey: "token") {
             isLogin = true
         }
-        
+        UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
         self.window = UIWindow(frame: UIScreen.main.bounds)
         let rootVC: UIViewController!
         

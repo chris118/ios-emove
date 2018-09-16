@@ -114,8 +114,8 @@ class EBOrderViewController: UIViewController {
     private lazy var headerView: UIView = {
         let view = UIView()
         view.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 90)
-        view.backgroundColor = UIColor(red: 15/255.5, green: 142/255.0, blue: 233/155.0, alpha: 1)
-        
+        view.backgroundColor = UIColor(red: 0, green: 146/255.0, blue: 224/255.0, alpha: 1)
+
         let label1 = UILabel(frame: CGRect(x: 0, y: 15, width: UIScreen.main.bounds.width, height: 20))
         label1.textAlignment = .center
         label1.textColor = UIColor.white
@@ -175,7 +175,7 @@ extension EBOrderViewController: UITableViewDataSource {
                 cell.isEnable = false
                 cell.titleLabel.text = "搬家时间:"
                 cell.valueTextField.text = respData?.result?.movingTime ?? ""
-                cell.valueTextField.textColor = UIColor(red: 12/255.0, green: 142/255.0, blue: 233/255.0, alpha: 1)
+                cell.valueTextField.textColor = UIColor(red: 0, green: 146/255.0, blue: 224/255.0, alpha: 1)
                 return cell
             }else if indexPath.row == 2 {
                 let cell = tableView.dequeueCell(EBInputTableViewCell.self)

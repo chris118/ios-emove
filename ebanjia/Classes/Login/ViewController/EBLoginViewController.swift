@@ -67,7 +67,7 @@ class EBLoginViewController: UIViewController {
             HUD.flash(.label("请输入正确的手机号码"), delay: 1.0)
             return
         }
-        serviceProvider.request(.login(mobile: mobile, code: "789456")) { (result) in
+        serviceProvider.request(.login(mobile: mobile, code: codeTextField.text ?? "")) { (result) in
             switch result {
             case let .success(response):
                 do {
