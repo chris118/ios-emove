@@ -27,6 +27,16 @@ class EBLoginViewController: UIViewController {
         print("EBLoginViewController deinit")
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        UIApplication.shared.statusBarStyle = UIStatusBarStyle.default
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
+    }
+    
     @IBAction func codeButtonTap(_ sender: Any) {
         guard let mobile = mobileTextField.text, mobile.count >= 11 else {
             HUD.flash(.label("请输入正确的手机号码"), delay: 1.0)

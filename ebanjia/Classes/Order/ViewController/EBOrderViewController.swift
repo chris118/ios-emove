@@ -114,7 +114,7 @@ class EBOrderViewController: UIViewController {
     private lazy var headerView: UIView = {
         let view = UIView()
         view.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 90)
-        view.backgroundColor = UIColor(red: 0, green: 146/255.0, blue: 224/255.0, alpha: 1)
+        view.backgroundColor = UIColor(red: 0, green: 144/255.0, blue: 227/255.0, alpha: 1)
 
         let label1 = UILabel(frame: CGRect(x: 0, y: 15, width: UIScreen.main.bounds.width, height: 20))
         label1.textAlignment = .center
