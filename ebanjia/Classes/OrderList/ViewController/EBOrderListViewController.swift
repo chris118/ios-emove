@@ -65,6 +65,15 @@ class EBOrderListViewController: UIViewController {
         typePickerView.show()
     }
     
+    @IBAction func callTap(_ sender: Any) {
+        let  tel = "400-000-6668"
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(URL(string: "tel:" + tel)!, options: [:], completionHandler: nil)
+        } else {
+            
+            UIApplication.shared.openURL(URL(string: "tel:" + tel)!)
+        }
+    }
     private lazy var typePickerView: EBItemPickerView = {
         var _typePickerView = EBItemPickerView()
         _typePickerView.items = orderTypes
@@ -105,10 +114,11 @@ extension EBOrderListViewController: UITableViewDataSource {
                  cell.statusLabel.text = "未完成"
             }
             
-            cell.kanjiaTap = {[weak self] orderId in
-                let kanjiaVC = EBKanjiaViewController()
-                 kanjiaVC.orderId = orderId
-                self?.navigationController?.pushViewController(kanjiaVC, animated: true)
+            cell.kanjiaTap = {orderId in
+//                let kanjiaVC = EBKanjiaViewController()
+//                 kanjiaVC.orderId = orderId
+//                self?.navigationController?.pushViewController(kanjiaVC, animated: true)
+                ShareUtil.shareSessiton(orderId: orderId)
             }
             
             cell.orderTap = {[weak self] orderId in

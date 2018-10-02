@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		830A24A32146117200F44DF5 /* TegKeychainConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830A24A02146117200F44DF5 /* TegKeychainConstants.swift */; };
-		830A24A42146117200F44DF5 /* KeychainSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830A24A12146117200F44DF5 /* KeychainSwift.swift */; };
-		830A24A52146117200F44DF5 /* KeychainSwiftAccessOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830A24A22146117200F44DF5 /* KeychainSwiftAccessOptions.swift */; };
 		830A24A821461B3400F44DF5 /* LoginResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830A24A721461B3400F44DF5 /* LoginResult.swift */; };
 		830A24AA21463AF500F44DF5 /* EBInfoResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830A24A921463AF400F44DF5 /* EBInfoResult.swift */; };
 		830A24AC21463B1500F44DF5 /* EBMovein.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830A24AB21463B1500F44DF5 /* EBMovein.swift */; };
@@ -89,9 +86,6 @@
 		84BE8E762116B2BB00AE755E /* Moya.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 84BE8E6F2116B2AF00AE755E /* Moya.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		84BE8E772116B2EC00AE755E /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BE8E702116B2B000AE755E /* Alamofire.framework */; };
 		84BE8E8D2116B99B00AE755E /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BE8E8C2116B99B00AE755E /* libsqlite3.0.tbd */; };
-		84BE8E912116B9AB00AE755E /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BE8E902116B9AB00AE755E /* libstdc++.6.0.9.tbd */; };
-		84BE8E942116B9E400AE755E /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BE8E922116B9E300AE755E /* libcrypto.a */; };
-		84BE8E952116B9E400AE755E /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BE8E932116B9E400AE755E /* libssl.a */; };
 		84BE8EAD2116CE8100AE755E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BE8E802116B96000AE755E /* CoreLocation.framework */; };
 		84BE8EAE2116CE9400AE755E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BE8E822116B96A00AE755E /* QuartzCore.framework */; };
 		84BE8EAF2116CE9F00AE755E /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BE8E842116B97400AE755E /* OpenGLES.framework */; };
@@ -111,6 +105,36 @@
 		84BE8ED62117521300AE755E /* EBOrderListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BE8ED42117521300AE755E /* EBOrderListViewController.swift */; };
 		84BE8ED72117521300AE755E /* EBOrderListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84BE8ED52117521300AE755E /* EBOrderListViewController.xib */; };
 		84BE8ED92117592F00AE755E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84BE8ED82117592F00AE755E /* Assets.xcassets */; };
+		84D63CAD216302A100D12C78 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84D63CA5216302A000D12C78 /* libcrypto.a */; };
+		84D63CAE216302A100D12C78 /* BaiduMapAPI_Base.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84D63CA6216302A000D12C78 /* BaiduMapAPI_Base.framework */; };
+		84D63CAF216302A100D12C78 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84D63CA7216302A000D12C78 /* libssl.a */; };
+		84D63CB0216302A100D12C78 /* BaiduMapAPI_Search.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84D63CA8216302A000D12C78 /* BaiduMapAPI_Search.framework */; };
+		84D63CB1216302A100D12C78 /* KeychainSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D63CAA216302A000D12C78 /* KeychainSwift.swift */; };
+		84D63CB2216302A100D12C78 /* TegKeychainConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D63CAB216302A000D12C78 /* TegKeychainConstants.swift */; };
+		84D63CB3216302A100D12C78 /* KeychainSwiftAccessOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D63CAC216302A000D12C78 /* KeychainSwiftAccessOptions.swift */; };
+		84D63CCB2163046000D12C78 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 84D63CBC2163046000D12C78 /* README.txt */; };
+		84D63CCC2163046000D12C78 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84D63CBE2163046000D12C78 /* libWeChatSDK.a */; };
+		84D63CCD2163046000D12C78 /* ShareSDKConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84D63CC02163046000D12C78 /* ShareSDKConnector.framework */; };
+		84D63CCE2163046000D12C78 /* ShareSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 84D63CC12163046000D12C78 /* ShareSDK.bundle */; };
+		84D63CCF2163046000D12C78 /* ShareSDKUI.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 84D63CC32163046000D12C78 /* ShareSDKUI.bundle */; };
+		84D63CD02163046000D12C78 /* ShareSDKExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84D63CC42163046000D12C78 /* ShareSDKExtension.framework */; };
+		84D63CD12163046000D12C78 /* ShareSDKUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84D63CC52163046000D12C78 /* ShareSDKUI.framework */; };
+		84D63CD22163046000D12C78 /* WechatConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84D63CC72163046000D12C78 /* WechatConnector.framework */; };
+		84D63CD32163046000D12C78 /* ShareSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84D63CC82163046000D12C78 /* ShareSDK.framework */; };
+		84D63CD42163046000D12C78 /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84D63CCA2163046000D12C78 /* MOBFoundation.framework */; };
+		84D63CD6216304BE00D12C78 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 84D63CD5216304BE00D12C78 /* libicucore.tbd */; };
+		84D63CD8216304C900D12C78 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 84D63CD7216304C900D12C78 /* libz.tbd */; };
+		84D63CDA216304D900D12C78 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84D63CD9216304D900D12C78 /* JavaScriptCore.framework */; };
+		84D63CDC216304E300D12C78 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 84D63CDB216304E300D12C78 /* libsqlite3.tbd */; };
+		84F40B1021631BDB00045061 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F40B0F21631BDB00045061 /* libc++.tbd */; };
+		84F40B122163213100045061 /* ShareUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F40B112163213100045061 /* ShareUtil.swift */; };
+		84F40B182163287C00045061 /* ViewPagerTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F40B142163287C00045061 /* ViewPagerTabView.swift */; };
+		84F40B192163287C00045061 /* ViewPagerTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F40B152163287C00045061 /* ViewPagerTab.swift */; };
+		84F40B1A2163287C00045061 /* ViewPagerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F40B162163287C00045061 /* ViewPagerController.swift */; };
+		84F40B1B2163287C00045061 /* ViewPagerOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F40B172163287C00045061 /* ViewPagerOptions.swift */; };
+		84F40B1E21632EFB00045061 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F40B1D21632EFB00045061 /* CategoryViewController.swift */; };
+		84F40B22216335D400045061 /* EBCompanyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F40B20216335D400045061 /* EBCompanyViewController.swift */; };
+		84F40B23216335D400045061 /* EBCompanyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F40B21216335D400045061 /* EBCompanyViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -133,9 +157,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		830A24A02146117200F44DF5 /* TegKeychainConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegKeychainConstants.swift; sourceTree = "<group>"; };
-		830A24A12146117200F44DF5 /* KeychainSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainSwift.swift; sourceTree = "<group>"; };
-		830A24A22146117200F44DF5 /* KeychainSwiftAccessOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainSwiftAccessOptions.swift; sourceTree = "<group>"; };
 		830A24A721461B3400F44DF5 /* LoginResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginResult.swift; sourceTree = "<group>"; };
 		830A24A921463AF400F44DF5 /* EBInfoResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EBInfoResult.swift; sourceTree = "<group>"; };
 		830A24AB21463B1500F44DF5 /* EBMovein.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EBMovein.swift; sourceTree = "<group>"; };
@@ -236,6 +257,39 @@
 		84BE8ED42117521300AE755E /* EBOrderListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EBOrderListViewController.swift; sourceTree = "<group>"; };
 		84BE8ED52117521300AE755E /* EBOrderListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EBOrderListViewController.xib; sourceTree = "<group>"; };
 		84BE8ED82117592F00AE755E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		84D63CA5216302A000D12C78 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto.a; sourceTree = "<group>"; };
+		84D63CA6216302A000D12C78 /* BaiduMapAPI_Base.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Base.framework; sourceTree = "<group>"; };
+		84D63CA7216302A000D12C78 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libssl.a; sourceTree = "<group>"; };
+		84D63CA8216302A000D12C78 /* BaiduMapAPI_Search.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Search.framework; sourceTree = "<group>"; };
+		84D63CAA216302A000D12C78 /* KeychainSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainSwift.swift; sourceTree = "<group>"; };
+		84D63CAB216302A000D12C78 /* TegKeychainConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegKeychainConstants.swift; sourceTree = "<group>"; };
+		84D63CAC216302A000D12C78 /* KeychainSwiftAccessOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainSwiftAccessOptions.swift; sourceTree = "<group>"; };
+		84D63CBA2163046000D12C78 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
+		84D63CBB2163046000D12C78 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
+		84D63CBC2163046000D12C78 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		84D63CBD2163046000D12C78 /* WechatAuthSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WechatAuthSDK.h; sourceTree = "<group>"; };
+		84D63CBE2163046000D12C78 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
+		84D63CC02163046000D12C78 /* ShareSDKConnector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKConnector.framework; sourceTree = "<group>"; };
+		84D63CC12163046000D12C78 /* ShareSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ShareSDK.bundle; sourceTree = "<group>"; };
+		84D63CC32163046000D12C78 /* ShareSDKUI.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ShareSDKUI.bundle; sourceTree = "<group>"; };
+		84D63CC42163046000D12C78 /* ShareSDKExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKExtension.framework; sourceTree = "<group>"; };
+		84D63CC52163046000D12C78 /* ShareSDKUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKUI.framework; sourceTree = "<group>"; };
+		84D63CC72163046000D12C78 /* WechatConnector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WechatConnector.framework; sourceTree = "<group>"; };
+		84D63CC82163046000D12C78 /* ShareSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDK.framework; sourceTree = "<group>"; };
+		84D63CCA2163046000D12C78 /* MOBFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MOBFoundation.framework; sourceTree = "<group>"; };
+		84D63CD5216304BE00D12C78 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		84D63CD7216304C900D12C78 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		84D63CD9216304D900D12C78 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		84D63CDB216304E300D12C78 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		84F40B0F21631BDB00045061 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		84F40B112163213100045061 /* ShareUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareUtil.swift; sourceTree = "<group>"; };
+		84F40B142163287C00045061 /* ViewPagerTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewPagerTabView.swift; sourceTree = "<group>"; };
+		84F40B152163287C00045061 /* ViewPagerTab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewPagerTab.swift; sourceTree = "<group>"; };
+		84F40B162163287C00045061 /* ViewPagerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewPagerController.swift; sourceTree = "<group>"; };
+		84F40B172163287C00045061 /* ViewPagerOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewPagerOptions.swift; sourceTree = "<group>"; };
+		84F40B1D21632EFB00045061 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		84F40B20216335D400045061 /* EBCompanyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EBCompanyViewController.swift; sourceTree = "<group>"; };
+		84F40B21216335D400045061 /* EBCompanyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EBCompanyViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,24 +297,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84F40B1021631BDB00045061 /* libc++.tbd in Frameworks */,
+				84D63CDC216304E300D12C78 /* libsqlite3.tbd in Frameworks */,
+				84D63CDA216304D900D12C78 /* JavaScriptCore.framework in Frameworks */,
+				84D63CD8216304C900D12C78 /* libz.tbd in Frameworks */,
+				84D63CD6216304BE00D12C78 /* libicucore.tbd in Frameworks */,
 				8389AF1D2112D39D0066999D /* Result.framework in Frameworks */,
 				84BE8EC62117089A00AE755E /* BaiduMapAPI_Base.framework in Frameworks */,
+				84D63CAF216302A100D12C78 /* libssl.a in Frameworks */,
 				84BE8EC72117089A00AE755E /* BaiduMapAPI_Search.framework in Frameworks */,
 				84BE8EC52117087D00AE755E /* MobileCoreServices.framework in Frameworks */,
 				84BE8EB32116CECD00AE755E /* CoreTelephony.framework in Frameworks */,
+				84D63CCC2163046000D12C78 /* libWeChatSDK.a in Frameworks */,
+				84D63CCD2163046000D12C78 /* ShareSDKConnector.framework in Frameworks */,
+				84D63CAE216302A100D12C78 /* BaiduMapAPI_Base.framework in Frameworks */,
+				84D63CD12163046000D12C78 /* ShareSDKUI.framework in Frameworks */,
 				84BE8EB22116CEBE00AE755E /* Security.framework in Frameworks */,
 				84BE8EB12116CEB500AE755E /* CoreGraphics.framework in Frameworks */,
+				84D63CD42163046000D12C78 /* MOBFoundation.framework in Frameworks */,
 				84BE8EB02116CEAB00AE755E /* SystemConfiguration.framework in Frameworks */,
+				84D63CD22163046000D12C78 /* WechatConnector.framework in Frameworks */,
+				84D63CD02163046000D12C78 /* ShareSDKExtension.framework in Frameworks */,
 				84BE8EAF2116CE9F00AE755E /* OpenGLES.framework in Frameworks */,
 				84BE8EAE2116CE9400AE755E /* QuartzCore.framework in Frameworks */,
 				84BE8EAD2116CE8100AE755E /* CoreLocation.framework in Frameworks */,
-				84BE8E942116B9E400AE755E /* libcrypto.a in Frameworks */,
-				84BE8E952116B9E400AE755E /* libssl.a in Frameworks */,
-				84BE8E912116B9AB00AE755E /* libstdc++.6.0.9.tbd in Frameworks */,
+				84D63CAD216302A100D12C78 /* libcrypto.a in Frameworks */,
 				84BE8E8D2116B99B00AE755E /* libsqlite3.0.tbd in Frameworks */,
 				8389AF252112E29F0066999D /* ObjectMapper.framework in Frameworks */,
+				84D63CD32163046000D12C78 /* ShareSDK.framework in Frameworks */,
 				84BE8E772116B2EC00AE755E /* Alamofire.framework in Frameworks */,
 				8389AF4021131AA30066999D /* SnapKit.framework in Frameworks */,
+				84D63CB0216302A100D12C78 /* BaiduMapAPI_Search.framework in Frameworks */,
 				84BE8E712116B2B000AE755E /* Moya.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -268,17 +335,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		830A249F2146111200F44DF5 /* Vendor */ = {
-			isa = PBXGroup;
-			children = (
-				830A24A12146117200F44DF5 /* KeychainSwift.swift */,
-				830A24A22146117200F44DF5 /* KeychainSwiftAccessOptions.swift */,
-				830A24A02146117200F44DF5 /* TegKeychainConstants.swift */,
-			);
-			name = Vendor;
-			path = "New Group";
-			sourceTree = "<group>";
-		};
 		830A24A62146179000F44DF5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -385,7 +441,7 @@
 		8389AEEB211066940066999D /* ebanjia */ = {
 			isa = PBXGroup;
 			children = (
-				830A249F2146111200F44DF5 /* Vendor */,
+				84D63CA3216302A000D12C78 /* Vendor */,
 				84BE8E6C2116A04F00AE755E /* Conifg */,
 				84932C8D21160CC700431C57 /* Component */,
 				8389AF362112FA080066999D /* Extensions */,
@@ -405,6 +461,8 @@
 		8389AF0221129A710066999D /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				84F40B1F216335B500045061 /* Company */,
+				84F40B1C21632ED700045061 /* Category */,
 				83CCDA8D211D375A002E64C8 /* Order */,
 				83CCDA7A211C2E4B002E64C8 /* Vehicle */,
 				834BF503211BCF0600C6C76E /* InfoEx */,
@@ -460,6 +518,11 @@
 		8389AF172112D1590066999D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				84F40B0F21631BDB00045061 /* libc++.tbd */,
+				84D63CDB216304E300D12C78 /* libsqlite3.tbd */,
+				84D63CD9216304D900D12C78 /* JavaScriptCore.framework */,
+				84D63CD7216304C900D12C78 /* libz.tbd */,
+				84D63CD5216304BE00D12C78 /* libicucore.tbd */,
 				84BE8E922116B9E300AE755E /* libcrypto.a */,
 				84BE8E932116B9E400AE755E /* libssl.a */,
 				84BE8E902116B9AB00AE755E /* libstdc++.6.0.9.tbd */,
@@ -706,6 +769,159 @@
 			path = OrderList;
 			sourceTree = "<group>";
 		};
+		84D63CA3216302A000D12C78 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				84F40B132163287C00045061 /* viewpager */,
+				84D63CB42163046000D12C78 /* share */,
+				84D63CA4216302A000D12C78 /* baidu */,
+				84D63CA9216302A000D12C78 /* keychain */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		84D63CA4216302A000D12C78 /* baidu */ = {
+			isa = PBXGroup;
+			children = (
+				84D63CA5216302A000D12C78 /* libcrypto.a */,
+				84D63CA6216302A000D12C78 /* BaiduMapAPI_Base.framework */,
+				84D63CA7216302A000D12C78 /* libssl.a */,
+				84D63CA8216302A000D12C78 /* BaiduMapAPI_Search.framework */,
+			);
+			path = baidu;
+			sourceTree = "<group>";
+		};
+		84D63CA9216302A000D12C78 /* keychain */ = {
+			isa = PBXGroup;
+			children = (
+				84D63CAA216302A000D12C78 /* KeychainSwift.swift */,
+				84D63CAB216302A000D12C78 /* TegKeychainConstants.swift */,
+				84D63CAC216302A000D12C78 /* KeychainSwiftAccessOptions.swift */,
+			);
+			path = keychain;
+			sourceTree = "<group>";
+		};
+		84D63CB42163046000D12C78 /* share */ = {
+			isa = PBXGroup;
+			children = (
+				84D63CB52163046000D12C78 /* SDK */,
+				84F40B112163213100045061 /* ShareUtil.swift */,
+			);
+			path = share;
+			sourceTree = "<group>";
+		};
+		84D63CB52163046000D12C78 /* SDK */ = {
+			isa = PBXGroup;
+			children = (
+				84D63CB62163046000D12C78 /* ShareSDK */,
+				84D63CC92163046000D12C78 /* Required */,
+			);
+			path = SDK;
+			sourceTree = "<group>";
+		};
+		84D63CB62163046000D12C78 /* ShareSDK */ = {
+			isa = PBXGroup;
+			children = (
+				84D63CB72163046000D12C78 /* Support */,
+				84D63CC82163046000D12C78 /* ShareSDK.framework */,
+			);
+			path = ShareSDK;
+			sourceTree = "<group>";
+		};
+		84D63CB72163046000D12C78 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				84D63CB82163046000D12C78 /* PlatformSDK */,
+				84D63CBF2163046000D12C78 /* Required */,
+				84D63CC22163046000D12C78 /* Optional */,
+				84D63CC62163046000D12C78 /* PlatformConnector */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		84D63CB82163046000D12C78 /* PlatformSDK */ = {
+			isa = PBXGroup;
+			children = (
+				84D63CB92163046000D12C78 /* WeChatSDK */,
+			);
+			path = PlatformSDK;
+			sourceTree = "<group>";
+		};
+		84D63CB92163046000D12C78 /* WeChatSDK */ = {
+			isa = PBXGroup;
+			children = (
+				84D63CBA2163046000D12C78 /* WXApi.h */,
+				84D63CBB2163046000D12C78 /* WXApiObject.h */,
+				84D63CBC2163046000D12C78 /* README.txt */,
+				84D63CBD2163046000D12C78 /* WechatAuthSDK.h */,
+				84D63CBE2163046000D12C78 /* libWeChatSDK.a */,
+			);
+			path = WeChatSDK;
+			sourceTree = "<group>";
+		};
+		84D63CBF2163046000D12C78 /* Required */ = {
+			isa = PBXGroup;
+			children = (
+				84D63CC02163046000D12C78 /* ShareSDKConnector.framework */,
+				84D63CC12163046000D12C78 /* ShareSDK.bundle */,
+			);
+			path = Required;
+			sourceTree = "<group>";
+		};
+		84D63CC22163046000D12C78 /* Optional */ = {
+			isa = PBXGroup;
+			children = (
+				84D63CC32163046000D12C78 /* ShareSDKUI.bundle */,
+				84D63CC42163046000D12C78 /* ShareSDKExtension.framework */,
+				84D63CC52163046000D12C78 /* ShareSDKUI.framework */,
+			);
+			path = Optional;
+			sourceTree = "<group>";
+		};
+		84D63CC62163046000D12C78 /* PlatformConnector */ = {
+			isa = PBXGroup;
+			children = (
+				84D63CC72163046000D12C78 /* WechatConnector.framework */,
+			);
+			path = PlatformConnector;
+			sourceTree = "<group>";
+		};
+		84D63CC92163046000D12C78 /* Required */ = {
+			isa = PBXGroup;
+			children = (
+				84D63CCA2163046000D12C78 /* MOBFoundation.framework */,
+			);
+			path = Required;
+			sourceTree = "<group>";
+		};
+		84F40B132163287C00045061 /* viewpager */ = {
+			isa = PBXGroup;
+			children = (
+				84F40B142163287C00045061 /* ViewPagerTabView.swift */,
+				84F40B152163287C00045061 /* ViewPagerTab.swift */,
+				84F40B162163287C00045061 /* ViewPagerController.swift */,
+				84F40B172163287C00045061 /* ViewPagerOptions.swift */,
+			);
+			path = viewpager;
+			sourceTree = "<group>";
+		};
+		84F40B1C21632ED700045061 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				84F40B1D21632EFB00045061 /* CategoryViewController.swift */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		84F40B1F216335B500045061 /* Company */ = {
+			isa = PBXGroup;
+			children = (
+				84F40B20216335D400045061 /* EBCompanyViewController.swift */,
+				84F40B21216335D400045061 /* EBCompanyViewController.xib */,
+			);
+			path = Company;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -771,8 +987,10 @@
 				83600879211D8D3200C9F866 /* EBNoteTableViewCell.xib in Resources */,
 				83CCDAA0211D416B002E64C8 /* EB2ColumnTableViewCell.xib in Resources */,
 				8389AF3C211304A90066999D /* EBSelectTableViewCell.xib in Resources */,
+				84D63CCE2163046000D12C78 /* ShareSDK.bundle in Resources */,
 				83CCDA7F211C2E8B002E64C8 /* EBVehicleViewController.xib in Resources */,
 				83BA49ED2117E8EA0085FB68 /* EBGoodsViewController.xib in Resources */,
+				84D63CCB2163046000D12C78 /* README.txt in Resources */,
 				8360087D211D939800C9F866 /* EB3ColumnTableViewCell.xib in Resources */,
 				83600894212276FA00C9F866 /* EBKanjiaViewController.xib in Resources */,
 				834BF508211BCF2A00C6C76E /* EBInfoExViewController.xib in Resources */,
@@ -782,11 +1000,13 @@
 				8389AF0121129A620066999D /* EBLoginViewController.xib in Resources */,
 				8389AF352112F9190066999D /* EBInputTableViewCell.xib in Resources */,
 				8389AF0821129AC20066999D /* EBInfoViewController.xib in Resources */,
+				84F40B23216335D400045061 /* EBCompanyViewController.xib in Resources */,
 				8360088E21212ED000C9F866 /* EBOrderListTableViewCell.xib in Resources */,
 				84BE8ED72117521300AE755E /* EBOrderListViewController.xib in Resources */,
 				834BF502211AD2F700C6C76E /* EBCategoryTableViewCell.xib in Resources */,
 				84BE8ED92117592F00AE755E /* Assets.xcassets in Resources */,
 				834BF4FE211ABD2700C6C76E /* EBGoodsTableViewCell.xib in Resources */,
+				84D63CCF2163046000D12C78 /* ShareSDKUI.bundle in Resources */,
 				84BE8EBA2116CF3200AE755E /* EBSearchMapViewController.xib in Resources */,
 				83CCDA79211C1D34002E64C8 /* EBMarkTableViewCell.xib in Resources */,
 			);
@@ -821,42 +1041,50 @@
 				84932C9421160CE200431C57 /* EBItemPickerView.swift in Sources */,
 				83CCDA6C211BD13D002E64C8 /* CartContact.swift in Sources */,
 				8389AF3B211304A90066999D /* EBSelectTableViewCell.swift in Sources */,
-				830A24A42146117200F44DF5 /* KeychainSwift.swift in Sources */,
 				834BF4FD211ABD2700C6C76E /* EBGoodsTableViewCell.swift in Sources */,
 				834BF507211BCF2A00C6C76E /* EBInfoExViewController.swift in Sources */,
 				84932C9321160CE200431C57 /* EBMaskView.swift in Sources */,
 				8389AF382112FA270066999D /* UITableView+Reuse.swift in Sources */,
 				834BF501211AD2F700C6C76E /* EBCategoryTableViewCell.swift in Sources */,
+				84F40B122163213100045061 /* ShareUtil.swift in Sources */,
 				8389AEED211066940066999D /* AppDelegate.swift in Sources */,
 				83CCDA6F211BD13D002E64C8 /* TimeSlot.swift in Sources */,
 				830A24AE2146402A00F44DF5 /* EBResponsePlugin.swift in Sources */,
+				84D63CB2216302A100D12C78 /* TegKeychainConstants.swift in Sources */,
+				84F40B1E21632EFB00045061 /* CategoryViewController.swift in Sources */,
 				8389AF2A2112E3C40066999D /* EBResponse.swift in Sources */,
 				8389AF0021129A620066999D /* EBLoginViewController.swift in Sources */,
 				84BE8ED1211751D900AE755E /* EBHomeViewController.swift in Sources */,
 				8389AF3E211314A40066999D /* EBHeaderView.swift in Sources */,
+				84F40B22216335D400045061 /* EBCompanyViewController.swift in Sources */,
 				830A24AC21463B1500F44DF5 /* EBMovein.swift in Sources */,
 				830A24B02146418E00F44DF5 /* EBServiceManager.swift in Sources */,
 				8360089021212ED000C9F866 /* EBOrderListResult.swift in Sources */,
 				8389AF342112F9190066999D /* EBInputTableViewCell.swift in Sources */,
 				83CCDA99211D378F002E64C8 /* OrderResult.swift in Sources */,
+				84F40B182163287C00045061 /* ViewPagerTabView.swift in Sources */,
 				83CCDA88211C31FC002E64C8 /* EBVehicleTableViewCell.swift in Sources */,
 				830A24A821461B3400F44DF5 /* LoginResult.swift in Sources */,
 				83CCDA97211D378F002E64C8 /* TotalInfo.swift in Sources */,
 				83CCDA91211D377D002E64C8 /* EBOrderViewController.swift in Sources */,
+				84D63CB3216302A100D12C78 /* KeychainSwiftAccessOptions.swift in Sources */,
 				8389AF0721129AC20066999D /* EBInfoViewController.swift in Sources */,
 				83CCDA84211C2F3A002E64C8 /* VehicleResult.swift in Sources */,
 				83CCDA9F211D416B002E64C8 /* EB2ColumnTableViewCell.swift in Sources */,
+				84F40B1A2163287C00045061 /* ViewPagerController.swift in Sources */,
 				834BF4F9211AB97D00C6C76E /* Category.swift in Sources */,
 				83CCDA7E211C2E8B002E64C8 /* EBVehicleViewController.swift in Sources */,
+				84F40B1B2163287C00045061 /* ViewPagerOptions.swift in Sources */,
 				84BE8ED62117521300AE755E /* EBOrderListViewController.swift in Sources */,
 				8360087C211D939800C9F866 /* EB3ColumnTableViewCell.swift in Sources */,
+				84F40B192163287C00045061 /* ViewPagerTab.swift in Sources */,
 				83CCDA6D211BD13D002E64C8 /* InfoExResult.swift in Sources */,
-				830A24A32146117200F44DF5 /* TegKeychainConstants.swift in Sources */,
 				83CCDA8C211C3703002E64C8 /* EBStarRateView.swift in Sources */,
 				83BA49EC2117E8EA0085FB68 /* EBGoodsViewController.swift in Sources */,
 				8360088F21212ED000C9F866 /* EBOrderListTableViewCell.swift in Sources */,
 				8360087F212119CC00C9F866 /* String+Size.swift in Sources */,
 				83CCDA74211C0FCD002E64C8 /* Date+extension.swift in Sources */,
+				84D63CB1216302A100D12C78 /* KeychainSwift.swift in Sources */,
 				83CCDA70211BD13D002E64C8 /* CartTime.swift in Sources */,
 				834BF4F6211AB93600C6C76E /* CartGood.swift in Sources */,
 				8389AF162112CBD10066999D /* EBServiceApi.swift in Sources */,
@@ -864,7 +1092,6 @@
 				83CCDA78211C1D34002E64C8 /* EBMarkTableViewCell.swift in Sources */,
 				83600878211D8D3200C9F866 /* EBNoteTableViewCell.swift in Sources */,
 				83600893212276FA00C9F866 /* EBKanjiaViewController.swift in Sources */,
-				830A24A52146117200F44DF5 /* KeychainSwiftAccessOptions.swift in Sources */,
 				84932C9221160CE200431C57 /* EBContentView.swift in Sources */,
 				84BE8EB92116CF3200AE755E /* EBSearchMapViewController.swift in Sources */,
 				84BE8ECA21170A2D00AE755E /* EBDummy.mm in Sources */,
@@ -1009,13 +1236,19 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2Q79275L2V;
+				DEVELOPMENT_TEAM = W395RC57B2;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/ebanjia/Vendor",
+					"$(PROJECT_DIR)/ebanjia/Vendor/baidu",
+					"$(PROJECT_DIR)/ebanjia/Vendor/share/SDK/ShareSDK/Support/Required",
+					"$(PROJECT_DIR)/ebanjia/Vendor/share/SDK/ShareSDK/Support/Optional",
+					"$(PROJECT_DIR)/ebanjia/Vendor/share/SDK/ShareSDK/Support/PlatformConnector",
+					"$(PROJECT_DIR)/ebanjia/Vendor/share/SDK/ShareSDK",
+					"$(PROJECT_DIR)/ebanjia/Vendor/share/SDK/Required",
 				);
 				GCC_INPUT_FILETYPE = automatic;
 				INFOPLIST_FILE = ebanjia/Info.plist;
@@ -1026,9 +1259,11 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ebanjia/Vendor",
+					"$(PROJECT_DIR)/ebanjia/Vendor/baidu",
+					"$(PROJECT_DIR)/ebanjia/Vendor/share/SDK/ShareSDK/Support/PlatformSDK/WeChatSDK",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = cn.ebanjia.app;
+				PRODUCT_BUNDLE_IDENTIFIER = com.boyu.ebanjia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ebanjia/ebanjia-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1043,13 +1278,19 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2Q79275L2V;
+				DEVELOPMENT_TEAM = W395RC57B2;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/ebanjia/Vendor",
+					"$(PROJECT_DIR)/ebanjia/Vendor/baidu",
+					"$(PROJECT_DIR)/ebanjia/Vendor/share/SDK/ShareSDK/Support/Required",
+					"$(PROJECT_DIR)/ebanjia/Vendor/share/SDK/ShareSDK/Support/Optional",
+					"$(PROJECT_DIR)/ebanjia/Vendor/share/SDK/ShareSDK/Support/PlatformConnector",
+					"$(PROJECT_DIR)/ebanjia/Vendor/share/SDK/ShareSDK",
+					"$(PROJECT_DIR)/ebanjia/Vendor/share/SDK/Required",
 				);
 				GCC_INPUT_FILETYPE = automatic;
 				INFOPLIST_FILE = ebanjia/Info.plist;
@@ -1060,9 +1301,11 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ebanjia/Vendor",
+					"$(PROJECT_DIR)/ebanjia/Vendor/baidu",
+					"$(PROJECT_DIR)/ebanjia/Vendor/share/SDK/ShareSDK/Support/PlatformSDK/WeChatSDK",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = cn.ebanjia.app;
+				PRODUCT_BUNDLE_IDENTIFIER = com.boyu.ebanjia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ebanjia/ebanjia-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;

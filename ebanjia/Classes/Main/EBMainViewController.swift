@@ -21,7 +21,7 @@ class EBMainViewController: UITabBarController {
         homeVC.tabBarItem.image = UIImage(named:"home_1")
         homeVC.tabBarItem.selectedImage = UIImage(named:"home")
         
-        let  infoVC  = EBInfoViewController()
+        let  infoVC  = CategoryViewController()
         let naviHome = UINavigationController(rootViewController: infoVC)
         naviHome.navigationBar.barTintColor = UIColor(red: 0, green: 144/255.0, blue: 227/255.0, alpha: 1)
         let dict:NSDictionary = [NSAttributedStringKey.foregroundColor: UIColor.white, NSAttributedStringKey.font : UIFont.systemFont(ofSize: 18)]
