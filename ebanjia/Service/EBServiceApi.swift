@@ -24,6 +24,7 @@ enum EBServiceApi {
     case orderById(order_id: Int)
     case orderSubmit
     case orderList(page: Int, order_status: String)
+    case companySave(companyName: String, contactName: String, contactMobile: String, userNote: String)
 }
 
 extension EBServiceApi : TargetType {
@@ -63,6 +64,8 @@ extension EBServiceApi : TargetType {
             return "order/save"
         case .orderList(_, _):
             return "get/orders"
+        case .companySave(_, _, _, _):
+            return "order/company-save"
         }
     }
     
@@ -97,6 +100,8 @@ extension EBServiceApi : TargetType {
             return .post
         case .orderList(_, _):
             return .get
+        case .companySave(_, _, _, _):
+            return .post
         }
     }
     
@@ -135,9 +140,15 @@ extension EBServiceApi : TargetType {
             params["page"] = page
             params["order_status"] = order_status
             break
+        case .companySave(let company_name, let user_name, let user_telephone, let user_note):
+            params["company_name"] = company_name
+            params["user_name"] = user_name
+            params["user_telephone"] = user_telephone
+            params["user_note"] = user_note
+            break
         }
         
-        params["banjia_type"] = 1
+        params["banjia_type"] = EBConfig.banjia_type
         params["eappid"] = 8101
 
         let uid = UserDefaults.standard.string(forKey: "uid")

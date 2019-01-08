@@ -36,21 +36,19 @@ class EBInfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let item = UIBarButtonItem(title: "下一步", style: UIBarButtonItemStyle.plain, target: self, action: #selector(nextTap))
-        self.navigationItem.rightBarButtonItem = item
-        
+//        let item = UIBarButtonItem(title: "下一步", style: UIBarButtonItemStyle.plain, target: self, action: #selector(nextTap))
+//        self.navigationItem.rightBarButtonItem = item
+//
         self.tableView.registerNibWithCell(EBInputTableViewCell.self)
         self.tableView.registerNibWithCell(EBSelectTableViewCell.self)
         self.tableView.tableFooterView = UIView()
-        
-        loadData()
     }
 
     deinit {
         print("EBInfoViewController deinit")
     }
     
-    @objc private func nextTap() {
+    func nextTap() {
         var moveout_params = [String: Any]()
         moveout_params["address"] = out_adress
         moveout_params["floor"] = floor_out_index + 1
@@ -92,7 +90,7 @@ class EBInfoViewController: UIViewController {
         }
     }
     
-    private func loadData() {
+    public func loadData() {
         EBServiceManager.shared.request(target: EBServiceApi.info) {[weak self] result in
             guard let `self` = self else {return}
             switch result {
@@ -197,13 +195,23 @@ extension EBInfoViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 , self.elevator_out_index == 1 {
-            return 5
+        if section == 0 {
+            if self.out_adress.count == 0 {
+                return 1
+            }else if self.elevator_out_index == 1 {
+                 return 5
+            }
+            return 4
         }
-        if section == 1, self.elevator_in_index == 1 {
-            return 5
+        if section == 1{
+            if self.in_adress.count == 0 {
+                return 1
+            }else if self.elevator_in_index == 1 {
+                 return 5
+            }
+            return 4
         }
-        return 4
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -242,7 +250,8 @@ extension EBInfoViewController: UITableViewDataSource {
                     let cell = tableView.dequeueCell(EBInputTableViewCell.self)
                     cell.titleLabel.text = "搬出距离"
                     cell.valueTextField.placeholder = "请填写搬出距离"
-                    cell.valueTextField.text = "\(self.out_distance)"
+                     cell.valueTextField.isEnabled = true
+                    cell.valueTextField.text = self.out_distance == 0 ? "" : "\(self.out_distance)"
                     cell.valueChanged = {[weak self] value in
                         self?.out_distance = Int(value) ?? 0
                     }
@@ -253,7 +262,8 @@ extension EBInfoViewController: UITableViewDataSource {
                     let cell = tableView.dequeueCell(EBInputTableViewCell.self)
                     cell.titleLabel.text = "搬出距离"
                     cell.valueTextField.placeholder = "请填写搬出距离"
-                    cell.valueTextField.text = "\(self.out_distance)"
+                    cell.valueTextField.isEnabled = true
+                    cell.valueTextField.text = self.out_distance == 0 ? "" : "\(self.out_distance)"
                     cell.valueChanged = {[weak self] value in
                         self?.out_distance = Int(value) ?? 0
                     }
@@ -297,7 +307,8 @@ extension EBInfoViewController: UITableViewDataSource {
                     let cell = tableView.dequeueCell(EBInputTableViewCell.self)
                     cell.titleLabel.text = "搬入距离"
                     cell.valueTextField.placeholder = "请填写搬入距离"
-                    cell.valueTextField.text = "\(self.in_distance)"
+                    cell.valueTextField.text = self.in_distance == 0 ? "" : "\(self.in_distance)"
+                    cell.valueTextField.isEnabled = true
                     cell.valueChanged = {[weak self] value in
                         self?.in_distance = Int(value) ?? 0
                     }
@@ -308,6 +319,8 @@ extension EBInfoViewController: UITableViewDataSource {
                     let cell = tableView.dequeueCell(EBInputTableViewCell.self)
                     cell.titleLabel.text = "搬入距离"
                     cell.valueTextField.placeholder = "请填写搬入距离"
+                    cell.valueTextField.text = self.in_distance == 0 ? "" : "\(self.in_distance)"
+                    cell.valueTextField.isEnabled = true
                     cell.valueChanged = {[weak self] value in
                         self?.in_distance = Int(value) ?? 0
                     }

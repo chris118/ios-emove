@@ -10,4 +10,5 @@ import UIKit
 
 class EBConfig {
     static let baiduAK = "Yuhy5DR6XvLfSYKv7nAfHykkpHyL94oX"
+    static var banjia_type = 1
 }
