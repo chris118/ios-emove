@@ -19,6 +19,9 @@ class EBLoginViewController: UIViewController {
     private var counter = 60
     private let serviceProvider = MoyaProvider<EBServiceApi>()
 
+//    private var timer: DispatchSourceTimer?
+//    var interal: DispatchTimeInterval = .seconds(1)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -35,9 +38,20 @@ class EBLoginViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
+        
+        self.timer?.invalidate()
     }
     
     @IBAction func codeButtonTap(_ sender: Any) {
+//        self.timer = DispatchSource.makeTimerSource(queue: DispatchQueue.global(qos: .default))
+//        self.timer?.schedule(deadline: .now(), repeating: self.interal)
+//        self.timer?.setEventHandler {
+//            print("counter: \(String(describing: self.counter))")
+//            self.counter -= 1
+//        }
+//        // 启动定时器
+//        self.timer?.resume()
+        
         guard let mobile = mobileTextField.text, mobile.count >= 11 else {
             HUD.flash(.label("请输入正确的手机号码"), delay: 1.0)
             return
@@ -50,6 +64,8 @@ class EBLoginViewController: UIViewController {
                     let resp = EBResponseEmpty(JSONString: try response.mapString())
                     if resp?.code == 0 { // 发送成功 倒计时开始
                         self.timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) {[weak self] (timer) in
+                            print("counter: \(String(describing: self?.counter))")
+
                             guard let `self` = self else {
                                 return
                             }
@@ -60,8 +76,11 @@ class EBLoginViewController: UIViewController {
                             }else {
                                 self.codeButton.setTitle("获取验证码", for: .normal)
                                 self.codeButton.isEnabled = true
+                                self.timer?.invalidate()
                             }
                         }
+
+                        RunLoop.current.add(self.timer!, forMode: RunLoopMode.commonModes)
                     }
                     HUD.flash(.label(resp?.msg), delay: 1.0)
                 } catch {

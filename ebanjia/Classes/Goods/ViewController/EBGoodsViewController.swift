@@ -216,10 +216,10 @@ class EBGoodsViewController: UIViewController {
         
         //更新红点数量 更新体积
         var badge_count = 0
-        var bulk_count = 0
+        var bulk_count = 0.0
         for item in cartGoods {
             badge_count += item.goodsNum ?? 0
-            bulk_count += item.goodsCubage ?? 0
+            bulk_count = bulk_count + Double((item.goodsCubage ?? 0.0))
         }
         badgeLabel.text = String(badge_count)
         bulkLabel.text = String(bulk_count)

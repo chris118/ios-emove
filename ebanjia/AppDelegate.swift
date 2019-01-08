@@ -13,6 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, BMKGeneralDelegate {
     
     var window: UIWindow?
     var _mapManager: BMKMapManager?
+    var backgroundTask:UIBackgroundTaskIdentifier! = nil
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         initBaiduMap()
@@ -54,8 +55,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, BMKGeneralDelegate {
     }
     
     func applicationDidEnterBackground(_ application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        if self.backgroundTask != nil {
+            application.endBackgroundTask(self.backgroundTask)
+            self.backgroundTask = UIBackgroundTaskInvalid
+        }
+        self.backgroundTask = application.beginBackgroundTask(expirationHandler: {
+            () -> Void in
+            //如果没有调用endBackgroundTask，时间耗尽时应用程序将被终止
+            application.endBackgroundTask(self.backgroundTask)
+            self.backgroundTask = UIBackgroundTaskInvalid
+        })
     }
     
     func applicationWillEnterForeground(_ application: UIApplication) {

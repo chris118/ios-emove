@@ -8,7 +8,7 @@ import ObjectMapper
 
 class CartGood : NSObject, NSCoding, Mappable{
 
-	var goodsCubage : Int?
+	var goodsCubage : Float?
 	var goodsId : Int?
 	var goodsName : String?
 	var goodsNum : Int?
@@ -43,7 +43,7 @@ class CartGood : NSObject, NSCoding, Mappable{
     */
     @objc required init(coder aDecoder: NSCoder)
 	{
-         goodsCubage = aDecoder.decodeObject(forKey: "goods_cubage") as? Int
+         goodsCubage = aDecoder.decodeObject(forKey: "goods_cubage") as? Float
          goodsId = aDecoder.decodeObject(forKey: "goods_id") as? Int
          goodsName = aDecoder.decodeObject(forKey: "goods_name") as? String
          goodsNum = aDecoder.decodeObject(forKey: "goods_num") as? Int

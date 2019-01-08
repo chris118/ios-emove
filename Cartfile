@@ -1,6 +1,6 @@
 github "Moya/Moya"
 
-github "Hearst-DD/ObjectMapper" ~> 3.3
+github "Hearst-DD/ObjectMapper" ~> 3.4
 
 github "pkluz/PKHUD" ~> 5.0
 
