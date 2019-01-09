@@ -7,3 +7,4 @@
 #import "WXApi.h"
 #import "ShareSDK/ShareSDK.h"
 #import "ShareSDKConnector/ShareSDKConnector.h"
+#import <Bugly/Bugly.h>

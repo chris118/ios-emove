@@ -51,7 +51,6 @@ class EBLoginViewController: UIViewController {
 //        }
 //        // 启动定时器
 //        self.timer?.resume()
-        
         guard let mobile = mobileTextField.text, mobile.count >= 11 else {
             HUD.flash(.label("请输入正确的手机号码"), delay: 1.0)
             return

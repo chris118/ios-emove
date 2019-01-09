@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, BMKGeneralDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         initBaiduMap()
         initShareSDK()
+        Bugly.start(withAppId: "35bbd1d275")
         
         var isLogin = false
         if let _ = UserDefaults.standard.string(forKey: "token") {
@@ -29,16 +30,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, BMKGeneralDelegate {
         
         if isLogin {
             let mainVC = EBMainViewController()
-            //            mainVC.navigationItem.title = "e搬家"
-            //            let navi = UINavigationController(rootViewController: mainVC)
-            //            //导航栏背景颜色
-            //            navi.navigationBar.barTintColor = UIColor(red: 0, green: 144/255.0, blue: 227/255.0, alpha: 1)
-            //            let dict:NSDictionary = [NSAttributedStringKey.foregroundColor: UIColor.white, NSAttributedStringKey.font : UIFont.systemFont(ofSize: 18)]
-            //            //标题颜色
-            //            navi.navigationBar.titleTextAttributes = dict as? [NSAttributedStringKey : Any]
-            //
-            //            UINavigationBar.appearance().tintColor = UIColor.white
-            
             rootVC = mainVC
         }else {
             rootVC =  EBLoginViewController()

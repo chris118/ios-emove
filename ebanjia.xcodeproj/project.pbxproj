@@ -12,6 +12,7 @@
 		830A24AC21463B1500F44DF5 /* EBMovein.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830A24AB21463B1500F44DF5 /* EBMovein.swift */; };
 		830A24AE2146402A00F44DF5 /* EBResponsePlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830A24AD2146402A00F44DF5 /* EBResponsePlugin.swift */; };
 		830A24B02146418E00F44DF5 /* EBServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830A24AF2146418E00F44DF5 /* EBServiceManager.swift */; };
+		8322E8DA21E6074E008E48E2 /* Bugly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8322E8D921E6074D008E48E2 /* Bugly.framework */; };
 		834BF4F4211AB93600C6C76E /* AllGood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834BF4F0211AB93600C6C76E /* AllGood.swift */; };
 		834BF4F5211AB93600C6C76E /* GoodsResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834BF4F1211AB93600C6C76E /* GoodsResult.swift */; };
 		834BF4F6211AB93600C6C76E /* CartGood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834BF4F2211AB93600C6C76E /* CartGood.swift */; };
@@ -162,6 +163,7 @@
 		830A24AB21463B1500F44DF5 /* EBMovein.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EBMovein.swift; sourceTree = "<group>"; };
 		830A24AD2146402A00F44DF5 /* EBResponsePlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EBResponsePlugin.swift; sourceTree = "<group>"; };
 		830A24AF2146418E00F44DF5 /* EBServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EBServiceManager.swift; sourceTree = "<group>"; };
+		8322E8D921E6074D008E48E2 /* Bugly.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bugly.framework; sourceTree = "<group>"; };
 		834BF4F0211AB93600C6C76E /* AllGood.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllGood.swift; sourceTree = "<group>"; };
 		834BF4F1211AB93600C6C76E /* GoodsResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodsResult.swift; sourceTree = "<group>"; };
 		834BF4F2211AB93600C6C76E /* CartGood.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartGood.swift; sourceTree = "<group>"; };
@@ -297,6 +299,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8322E8DA21E6074E008E48E2 /* Bugly.framework in Frameworks */,
 				84F40B1021631BDB00045061 /* libc++.tbd in Frameworks */,
 				84D63CDC216304E300D12C78 /* libsqlite3.tbd in Frameworks */,
 				84D63CDA216304D900D12C78 /* JavaScriptCore.framework in Frameworks */,
@@ -341,6 +344,14 @@
 				830A24A721461B3400F44DF5 /* LoginResult.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		8322E8D821E6074D008E48E2 /* bugly */ = {
+			isa = PBXGroup;
+			children = (
+				8322E8D921E6074D008E48E2 /* Bugly.framework */,
+			);
+			path = bugly;
 			sourceTree = "<group>";
 		};
 		834BF4EC211AB78200C6C76E /* ViewController */ = {
@@ -772,6 +783,7 @@
 		84D63CA3216302A000D12C78 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				8322E8D821E6074D008E48E2 /* bugly */,
 				84F40B132163287C00045061 /* viewpager */,
 				84D63CB42163046000D12C78 /* share */,
 				84D63CA4216302A000D12C78 /* baidu */,
@@ -1249,6 +1261,7 @@
 					"$(PROJECT_DIR)/ebanjia/Vendor/share/SDK/ShareSDK/Support/PlatformConnector",
 					"$(PROJECT_DIR)/ebanjia/Vendor/share/SDK/ShareSDK",
 					"$(PROJECT_DIR)/ebanjia/Vendor/share/SDK/Required",
+					"$(PROJECT_DIR)/ebanjia/Vendor/bugly",
 				);
 				GCC_INPUT_FILETYPE = automatic;
 				INFOPLIST_FILE = ebanjia/Info.plist;
@@ -1291,6 +1304,7 @@
 					"$(PROJECT_DIR)/ebanjia/Vendor/share/SDK/ShareSDK/Support/PlatformConnector",
 					"$(PROJECT_DIR)/ebanjia/Vendor/share/SDK/ShareSDK",
 					"$(PROJECT_DIR)/ebanjia/Vendor/share/SDK/Required",
+					"$(PROJECT_DIR)/ebanjia/Vendor/bugly",
 				);
 				GCC_INPUT_FILETYPE = automatic;
 				INFOPLIST_FILE = ebanjia/Info.plist;
