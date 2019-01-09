@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -79,7 +79,7 @@
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                         </textField>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FIW-JD-c1a">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FIW-JD-c1a">
                             <rect key="frame" x="269" y="0.0" width="75" height="44"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
@@ -94,10 +94,10 @@
                             </connections>
                         </button>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z2t-6w-j01">
-                            <rect key="frame" x="268" y="0.0" width="1" height="44"/>
+                            <rect key="frame" x="268" y="10" width="1" height="24"/>
                             <color key="backgroundColor" red="0.86274509803921573" green="0.86274509803921573" blue="0.86274509803921573" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="0.20000000000000001" id="Pgu-yb-gpw"/>
+                                <constraint firstAttribute="width" constant="1" id="Pgu-yb-gpw"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -109,10 +109,10 @@
                         <constraint firstItem="z2t-6w-j01" firstAttribute="leading" secondItem="zUy-w8-fb8" secondAttribute="trailing" id="AQq-JX-irB"/>
                         <constraint firstItem="FIW-JD-c1a" firstAttribute="top" secondItem="AVU-Oo-Ndi" secondAttribute="top" id="D0P-ZH-9sl"/>
                         <constraint firstItem="zUy-w8-fb8" firstAttribute="top" secondItem="AVU-Oo-Ndi" secondAttribute="top" id="QBJ-VY-Ilh"/>
-                        <constraint firstItem="z2t-6w-j01" firstAttribute="top" secondItem="AVU-Oo-Ndi" secondAttribute="top" id="QBO-Rz-igr"/>
+                        <constraint firstItem="z2t-6w-j01" firstAttribute="top" secondItem="AVU-Oo-Ndi" secondAttribute="top" constant="10" id="QBO-Rz-igr"/>
                         <constraint firstAttribute="trailing" secondItem="FIW-JD-c1a" secondAttribute="trailing" id="cvf-zt-kyw"/>
                         <constraint firstAttribute="height" constant="44" id="gwx-Ve-8Xi"/>
-                        <constraint firstAttribute="bottom" secondItem="z2t-6w-j01" secondAttribute="bottom" id="huD-zf-AjO"/>
+                        <constraint firstAttribute="bottom" secondItem="z2t-6w-j01" secondAttribute="bottom" constant="10" id="huD-zf-AjO"/>
                         <constraint firstItem="FIW-JD-c1a" firstAttribute="leading" secondItem="z2t-6w-j01" secondAttribute="trailing" id="qP7-2z-7aT"/>
                     </constraints>
                 </view>
